@@ -1,0 +1,38 @@
+{
+  "name": "project-catwalk",
+  "version": "1.0.0",
+  "description": "FEC",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cavatappi-Engineering-Solutions/project-catwalk.git"
+  },
+  "author": "Cavatappi Engineering Solutions",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cavatappi-Engineering-Solutions/project-catwalk/issues"
+  },
+  "homepage": "https://github.com/Cavatappi-Engineering-Solutions/project-catwalk#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-react": "^7.13.13",
+    "babel-loader": "^8.2.2",
+    "jest": "^27.0.4",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "puppeteer": "^10.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.1.0",
+    "sass": "^1.34.1"
+  }
+}
