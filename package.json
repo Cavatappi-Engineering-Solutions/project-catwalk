@@ -4,7 +4,9 @@
   "description": "FEC",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test --coverage",
+    "build:dev": "webpack -w",
+    "build": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
