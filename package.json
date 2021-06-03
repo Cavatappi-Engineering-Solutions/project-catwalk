@@ -7,7 +7,7 @@
     "test": "test --coverage",
     "build:dev": "webpack -w",
     "build": "webpack --mode=production",
-    "start:dev": "start server/index.js"
+    "start:dev": "nodemon server/index.js"
   },
   "repository": {
     "type": "git",
