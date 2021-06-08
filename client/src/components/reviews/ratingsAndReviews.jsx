@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {API_KEY} from '../../../../config.js';
-import store from '../../index.jsx'
 import Ratings from './ratings.jsx';
 import Reviews from './reviews.jsx';
-import {getProductReviews} from '../../stateManagement/actions/reviewsActions.js';
-import {getProductRatings} from '../../stateManagement/actions/ratingsActions.js';
 
-const RatingsAndReviews = ({product_id}) => {
+const RatingsAndReviews = ({product_id, getProductReviews, getProductRatings}) => {
   const reviewConfig = {
     method: 'GET',
     url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews/',
@@ -25,8 +22,8 @@ const RatingsAndReviews = ({product_id}) => {
       const reviews = res[0].data.results;
       const ratings = res[1].data.ratings;
 
-      store.dispatch(getProductReviews(reviews));
-      store.dispatch(getProductRatings(ratings));
+      getProductReviews(reviews);
+      getProductRatings(ratings);
     }))
     .catch((err) => console.log(err))
 
