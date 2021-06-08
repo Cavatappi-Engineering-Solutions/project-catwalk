@@ -15,7 +15,7 @@ export const retrieveProductStyle = () => {
         const options = {
             method: 'GET',
             url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11001/styles',
-            headers: { 'Authorization': `${API_KEY}` }
+            headers: { 'Authorization': API_KEY }
         };
         return axios(options)
             .then(({data}) => { 
