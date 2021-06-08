@@ -7,7 +7,7 @@ import Reviews from './reviews.jsx';
 import {getProductReviews} from '../../stateManagement/actions/reviewsActions.js';
 import {getProductRatings} from '../../stateManagement/actions/ratingsActions.js';
 
-const RatingsAndReviews = ({product_id, reviewsReducer}) => {
+const RatingsAndReviews = ({product_id}) => {
   const reviewConfig = {
     method: 'GET',
     url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews/',
