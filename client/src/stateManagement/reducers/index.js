@@ -1,5 +1,8 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
+import productReducer from './product';
+import productStylesReducer from './selectStyles';
 
 export default combineReducers({
-  placeholder: 'placeholder'
+  product: productReducer,
+  productStyles: productStylesReducer
 });

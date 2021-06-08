@@ -6,7 +6,6 @@ const PORT = process.env.PORT || 1337;
 
 app.use(express.static(path.join(__dirname, '../client/public/')))
 
-
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
 });
