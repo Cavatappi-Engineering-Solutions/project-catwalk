@@ -4,12 +4,14 @@ import {createStore, applyMiddleware, compose} from 'redux';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 
+import RatingsAndReviews from './stateManagement/containers/reviews/ratingsAndReviewsContainer.js'
 import rootReducer from './stateManagement/reducers'
 
 const App = () => {
   return (
     <div>
       <h1>Hi</h1>
+      <RatingsAndReviews />
     </div>
   )
 }
