@@ -6,9 +6,11 @@ import BarGraph from './barGraph.jsx'
 import Characteristics from './characteristics.jsx'
 
 const Ratings = (props) => (
-  <section id="ratings">
-    <NumeralRating />
-    <StarRating />
+  <section id="ratings" className="container">
+    <div className="container-row">
+      <NumeralRating />
+      <StarRating />
+    </div>
     <PercentRecommend />
     <BarGraph />
     <Characteristics />
