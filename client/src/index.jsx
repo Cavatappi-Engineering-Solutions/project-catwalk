@@ -1,16 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createStore, applyMiddleware, compose} from 'redux';
-import {Provider} from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
-import RatingsAndReviews from './stateManagement/containers/reviews/ratingsAndReviewsContainer.js'
 import rootReducer from './stateManagement/reducers'
+import ProductsContainer from './stateManagement/containers/product';
+import ProductStyleContainer from './stateManagement/containers/selectStyles';
+import RatingsAndReviews from './stateManagement/containers/reviews/ratingsAndReviewsContainer.js'
 
 const App = () => {
   return (
     <div>
       <h1>Hi</h1>
+      <ProductsContainer />
+      <ProductStyleContainer />
       <RatingsAndReviews />
     </div>
   )
