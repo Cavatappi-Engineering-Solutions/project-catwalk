@@ -11,6 +11,6 @@ export default combineReducers({
   productStyles: productStylesReducer,
   reviews: reviewsReducer,
   ratings: ratingsReducer,
-  recommeded: recommendReducer,
+  recommended: recommendReducer,
   characteristics: characterReducer
 })
