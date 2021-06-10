@@ -8,4 +8,14 @@ const updateProductRatings = (productRatings) => ({
   payload: productRatings
 })
 
-export {getProductRatings, updateProductRatings};
+const getProductRecommended = (productRecommended) => ({
+  type: 'GET_RECOMMEND',
+  payload: productRecommended
+})
+
+const getProductCharacteristics = (productCharacteristics) => ({
+  type: 'GET_CHARACTER',
+  payload: productCharacteristics
+})
+
+export { getProductRatings, updateProductRatings, getProductRecommended, getProductCharacteristics }

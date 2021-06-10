@@ -1,7 +1,7 @@
 import React from 'react'
 import NumeralRating from '../../stateManagement/containers/reviews/numeralRatingContainer.js'
 import StarRating from '../../stateManagement/containers/reviews/starRatingContainer.js'
-import PercentRecommend from './percentRecommend.jsx'
+import PercentRecommend from '../../stateManagement/containers/reviews/percentRecommendContainer.js'
 import BarGraph from './barGraph.jsx'
 import Characteristics from './characteristics.jsx'
 
