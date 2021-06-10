@@ -10,19 +10,17 @@ const getProducts = (data) => ({
   payload: data
 })
 
-export const retrieveProduct = () => {
-  return (dispatch) => {
-    const options = {
-      method: 'GET',
-      url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11001',
-      headers: { Authorization: API_KEY }
-    }
-    return axios(options)
-      .then(({ data }) => {
-        dispatch(getProducts(data))
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+export const retrieveProduct = () => dispatch => {
+  const options = {
+    method: 'GET',
+    url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11001',
+    headers: { Authorization: API_KEY }
   }
+  return axios(options)
+    .then(({ data }) => {
+      dispatch(getProducts(data))
+    })
+    .catch((error) => {
+      console.log(error)
+    })
 }
