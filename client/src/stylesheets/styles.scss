@@ -1,0 +1,23 @@
+#bar-graph {
+  display: flex;
+  flex-direction: column;
+}
+
+.graph-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 350px;
+}
+
+.graph-row span {
+  width: 15%;
+}
+
+.bar {
+  align-content: center;
+  width: 60%;
+  height: .7em;
+  background: linear-gradient(90deg, rgb(0, 255, 0) var(--bar-size), rgb(212, 212, 212) var(--bar-size));
+}
