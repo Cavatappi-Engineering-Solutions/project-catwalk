@@ -1,12 +1,12 @@
-import { type } from '../actions/selectStyles';
+import { type } from '../actions/selectStyles'
 
 const productStylesReducer = (state = {}, action) => {
-    switch(action.type) {
-        case type.GET_PRODUCT_STYLES:
-            return action.payload;
-        default:
-            return state;
-    }  
+  switch (action.type) {
+    case type.GET_PRODUCT_STYLES:
+      return action.payload
+    default:
+      return state
+  }
 }
 
-export default productStylesReducer;
+export default productStylesReducer
