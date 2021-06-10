@@ -1,14 +1,16 @@
 import React from 'react'
 import NumeralRating from '../../stateManagement/containers/reviews/numeralRatingContainer.js'
-import StarRating from './starRating.jsx'
-import PercentRecommend from './percentRecommend.jsx'
+import StarRating from '../../stateManagement/containers/reviews/starRatingContainer.js'
+import PercentRecommend from '../../stateManagement/containers/reviews/percentRecommendContainer.js'
 import BarGraph from '../../stateManagement/containers/reviews/barGraphContainer.js'
 import Characteristics from './characteristics.jsx'
 
 const Ratings = (props) => (
-  <section id="ratings">
-    <NumeralRating />
-    <StarRating />
+  <section id="ratings" className="container">
+    <div className="container-row">
+      <NumeralRating />
+      <StarRating />
+    </div>
     <PercentRecommend />
     <BarGraph />
     <Characteristics />

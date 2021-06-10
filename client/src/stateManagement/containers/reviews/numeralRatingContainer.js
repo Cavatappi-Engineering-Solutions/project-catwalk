@@ -1,6 +1,6 @@
-import {connect} from 'react-redux';
-import NumeralRating from '../../../components/reviews/numeralRating.jsx';
+import { connect } from 'react-redux'
+import NumeralRating from '../../../components/reviews/numeralRating.jsx'
 
-const mapState = (state) => ({ratings: state.ratings})
+const mapState = (state) => ({ ratings: state.ratings })
 
-export default connect(mapState)(NumeralRating);
+export default connect(mapState)(NumeralRating)
