@@ -1,9 +1,9 @@
-import React from 'react';
-import NumeralRating from '../../stateManagement/containers/reviews/numeralRatingContainer.js';
-import StarRating from './starRating.jsx';
-import PercentRecommend from './percentRecommend.jsx';
-import BarGraph from './barGraph.jsx';
-import Characteristics from './characteristics.jsx';
+import React from 'react'
+import NumeralRating from '../../stateManagement/containers/reviews/numeralRatingContainer.js'
+import StarRating from './starRating.jsx'
+import PercentRecommend from '../../stateManagement/containers/reviews/percentRecommendContainer.js'
+import BarGraph from './barGraph.jsx'
+import Characteristics from './characteristics.jsx'
 
 const Ratings = (props) => (
   <section id="ratings">
@@ -15,4 +15,4 @@ const Ratings = (props) => (
   </section>
 )
 
-export default Ratings;
+export default Ratings
