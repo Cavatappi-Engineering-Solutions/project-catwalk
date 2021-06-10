@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const Characteristics = (props) => (
   <div id="characteristics">
@@ -6,4 +6,4 @@ const Characteristics = (props) => (
   </div>
 )
 
-export default Characteristics;
+export default Characteristics
