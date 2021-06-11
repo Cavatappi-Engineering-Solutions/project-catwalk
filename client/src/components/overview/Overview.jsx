@@ -2,19 +2,30 @@ import React from 'react'
 import Product from './Product.jsx'
 import SelectStyles from './SelectStyles.jsx'
 import Carousel from './Carousel.jsx'
-import SKU from './SKU.jsx'
+import AddToCart from './AddToCart.jsx'
+import DefaultView from './DefaultView.jsx'
+import NumeralRating from '../reviews/numeralRating.jsx'
+import StarRating from '../reviews/starRating.jsx'
 
 class Overview extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      view: false,
       currentProduct: '',
+      currentPhoto: 0,
       currentSelectedStyle: 0,
-      length: 0
+      length: 0,
+      quantity: ''
+      // sizeSelected: false,
     }
     this.previousStyle = this.previousStyle.bind(this)
     this.nextStyle = this.nextStyle.bind(this)
     this.changeSelectedStyle = this.changeSelectedStyle.bind(this)
+    this.imageGallery = this.imageGallery.bind(this)
+    this.changeView = this.changeView.bind(this)
+    this.changeSKU = this.changeSKU.bind(this)
+    this.changeMainPhoto = this.changeMainPhoto.bind(this)
   }
 
   componentDidMount () {
@@ -23,50 +34,100 @@ class Overview extends React.Component {
     retrieveStyles()
   }
 
+  imageGallery () {
+    const { view, length, currentSelectedStyle, currentPhoto } = this.state
+    const { productStyles } = this.props
+    if (view) {
+      return <Carousel
+      productStyles={ productStyles }
+      previousStyle={ this.previousStyle }
+      nextStyle={ this.nextStyle }
+      length={ length }
+      currentSelectedStyle= { currentSelectedStyle }
+      changeView={ this.changeView }
+      />
+    } else {
+      return <DefaultView
+      productStyles={ productStyles }
+      currentSelectedStyle={ currentSelectedStyle }
+      currentPhoto={ currentPhoto }
+      changeView={ this.changeView }
+      changeMainPhoto={ this.changeMainPhoto }
+      length={ length }
+      previousStyle={ this.previousStyle }
+      nextStyle={ this.nextStyle }
+      />
+    }
+  }
+
+  changeMainPhoto (index) {
+    this.setState({ currentPhoto: index, length: index })
+  }
+
+  changeSKU (quantity) {
+    this.setState({ quantity: quantity })
+  }
+
+  changeView () {
+    this.setState({ view: !this.state.view })
+  }
+
   changeSelectedStyle (index) {
     this.setState({ currentSelectedStyle: index, length: 0 })
   }
 
   previousStyle () {
-    if (this.state.length > 0) {
-      this.setState({ length: Math.abs(this.state.length) - 1 })
+    const { length, currentSelectedStyle } = this.state
+    const { productStyles } = this.props
+    if (length > 0) {
+      this.setState({ length: Math.abs(length) - 1 })
     } else {
-      this.setState({ length: this.props.productStyles.results[this.state.currentSelectedStyle].photos.length - 1 })
+      this.setState({ length: productStyles.results[currentSelectedStyle].photos.length - 1 })
     }
   }
 
   nextStyle () {
-    if (this.state.length < this.props.productStyles.results[this.state.currentSelectedStyle].photos.length - 1) {
-      this.setState({ length: this.state.length + 1 })
+    const { length, currentSelectedStyle } = this.state
+    const { productStyles } = this.props
+    if (length < productStyles.results[currentSelectedStyle].photos.length - 1) {
+      this.setState({ length: length + 1 })
     } else {
       this.setState({ length: 0 })
     }
   }
 
   render () {
-    const { product, productStyles } = this.props
-
+    const { currentSelectedStyle, quantity } = this.state
+    const { product, productStyles, ratings } = this.props
     return (
       <div>
-        <Carousel
-        productStyles={ productStyles }
-        previousStyle={ this.previousStyle }
-        nextStyle={ this.nextStyle }
-        length={ this.state.length }
-        currentSelectedStyle= { this.state.currentSelectedStyle }
-        />
-        <Product
-        product={ product }
-        />
-        <SelectStyles
-        productStyles={ productStyles }
-        currentSelectedStyle= { this.state.currentSelectedStyle }
-        changeSelectedStyle={ this.changeSelectedStyle }
-        />
-        <SKU
-        productStyles={ productStyles }
-        currentSelectedStyle= { this.state.currentSelectedStyle }
-        />
+        <section id='view'>
+          { this.imageGallery() }
+        </section>
+        <section id='ratings' className='container'>
+          <div className='container-row'>
+          <NumeralRating ratings={ ratings }/>
+          <StarRating ratings={ ratings }/>
+          </div>
+        </section>
+        <section id='product_information'>
+          <Product product={ product }/>
+        </section>
+        <section id='product_styles'>
+          <SelectStyles
+          productStyles={ productStyles }
+          currentSelectedStyle= { currentSelectedStyle }
+          changeSelectedStyle={ this.changeSelectedStyle }
+          />
+        </section>
+        <section id='add_to_cart'>
+          <AddToCart
+          quantity={ quantity }
+          productStyles={ productStyles }
+          currentSelectedStyle= { currentSelectedStyle }
+          changeSKU={ this.changeSKU }
+          />
+        </section>
       </div>
     )
   }
