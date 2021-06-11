@@ -2,6 +2,12 @@
   width: 100px;
 }
 
+#ratings {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
 .container-row {
   display: flex;
   flex-direction: row;
@@ -14,15 +20,15 @@
   -webkit-text-fill-color: transparent;
 }
 
+#ratings .star-rating {
+  font-size: 1.5em;
+  padding-top: 5px;
+}
+
 #numeral-rating {
   display: flex;
   font-size: 3em;
   padding-right: 20px;
-}
-
-#ratings .star-rating {
-  font-size: 1.5em;
-  padding-top: 5px;
 }
 
 #bar-graph {
@@ -47,4 +53,35 @@
   width: 60%;
   height: .7em;
   background: linear-gradient(90deg, rgb(0, 255, 0) var(--bar-size), rgb(212, 212, 212) var(--bar-size));
+}
+
+#characteristics {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.characteristic {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 85%;
+}
+
+.char-name {
+  margin-bottom: 1em;
+}
+
+.char-bar {
+  width: 100%;
+  height: .7em;
+  background-color: rgb(212, 212, 212);
+}
+
+.char-marker {
+  position: relative;
+  left: var(--marker-position);
+  top: -1.3em;
 }
