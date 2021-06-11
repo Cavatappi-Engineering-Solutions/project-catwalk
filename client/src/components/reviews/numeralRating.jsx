@@ -7,7 +7,6 @@ const NumeralRating = ({ ratings }) => {
     sum += key * ratings[key]
     total += Number(ratings[key])
   }
-  console.log('total: ', total, 'sum: ', sum)
   const weightedAvg = sum / total
   const roundedRating = Math.round((weightedAvg + Number.EPSILON) * 10) / 10
 
