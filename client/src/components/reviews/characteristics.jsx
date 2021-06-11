@@ -4,7 +4,7 @@ import Characteristic from './characteristic.jsx'
 const Characteristics = ({ characteristics }) => {
   const components = []
   for (const key in characteristics) {
-    const component = <Characteristic name={key} value={characteristics[key].value} key={characteristics[key].id} />
+    const component = <Characteristic name={key} characteristics={characteristics[key]} key={characteristics[key].id} />
     components.push(component)
   }
 
