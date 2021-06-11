@@ -20,9 +20,9 @@ const BarGraph = ({ ratings }) => {
           const percent = numOfRatings / total * 100
           return (
             <div id={`row-for-${starCount}stars`} className="graph-row" key={starCount}>
-              <span>{starCount} Stars</span>
+              <span className="num-stars">{starCount} Stars</span>
               <div className="bar" style={{ '--bar-size': `${percent}%` }}></div>
-              <span>{numOfRatings}</span>
+              <span className="num-ratings">{numOfRatings}</span>
             </div>
           )
         })}
