@@ -1,6 +1,9 @@
 import { connect } from 'react-redux'
 import BarGraph from '../../../components/reviews/barGraph.jsx'
 
-const mapState = (state) => ({ ratings: state.ratings })
+const mapStateToProps = (state) => ({
+  ratings: state.ratings.ratings,
+  total: state.ratings.total
+})
 
-export default connect(mapState)(BarGraph)
+export default connect(mapStateToProps)(BarGraph)

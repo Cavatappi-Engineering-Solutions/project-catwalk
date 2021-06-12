@@ -1,16 +1,13 @@
 import React from 'react'
 
-const BarGraph = ({ ratings }) => {
-  const total = Object.values(ratings).reduce((sum, ratings) => (sum + Number(ratings)), 0)
+const BarGraph = ({ ratings, total }) => {
   const starRatings = [
     { stars5: ratings['5'] },
     { stars4: ratings['4'] },
     { stars3: ratings['3'] },
     { stars2: ratings['2'] },
-    { stars1: ratings['1'] },
-    { stars0: ratings['0'] }
+    { stars1: ratings['1'] }
   ]
-
   return (
     <div id="bar-graph">
       <h4>Rating Breakdown</h4>
