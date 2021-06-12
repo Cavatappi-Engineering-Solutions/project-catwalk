@@ -2,12 +2,12 @@ const characterReducer = (characteristics = {}, action) => {
   switch (action.type) {
     case 'GET_CHARACTER': {
       const meanings = {
-        Fit: { low: 'Poor', high: 'Perfect' },
-        Size: { low: 'Too small', high: 'Too large' },
+        Fit: { low: 'Runs tight', high: 'Runs long' },
+        Size: { low: 'A size too small', high: 'A size too large' },
         Width: { low: 'Too narrrow', high: 'Too wide' },
-        Length: { low: 'Too short', high: 'Too long' },
-        Comfort: { low: 'Poor', high: 'Perfect' },
-        Quality: { low: 'Poor', high: 'High' }
+        Length: { low: 'Runs short', high: 'Runs long' },
+        Comfort: { low: 'Uncomfortable', high: 'Perfect' },
+        Quality: { low: 'Poor', high: 'Perfect' }
       }
       const charAndMeanings = {}
       for (const key in action.payload) {
