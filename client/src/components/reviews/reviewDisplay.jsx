@@ -1,9 +1,9 @@
 import React from 'react'
 import Review from './reviewTile.jsx'
 
-const ReviewDisplay = (props) => (
+const ReviewDisplay = ({ reviews }) => (
   <div>
-    <Review />
+    {reviews.map((review) => (<Review data={review} key={review.review_id} />))}
   </div>
 )
 
