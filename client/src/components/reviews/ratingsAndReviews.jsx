@@ -34,8 +34,10 @@ const RatingsAndReviews = ({ product_id, getProductReviews, getProductRatings, g
   return (
     <section id="ratings-reviews">
       <h2>Ratings &amp; Reviews</h2>
-      <Ratings />
-      <Reviews />
+      <div className="container-row">
+        <Ratings />
+        <Reviews />
+      </div>
     </section>
   )
 }
