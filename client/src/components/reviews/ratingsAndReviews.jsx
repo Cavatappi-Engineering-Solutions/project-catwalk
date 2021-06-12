@@ -4,12 +4,12 @@ import { API_KEY } from '../../../../config.js'
 import Ratings from './ratings.jsx'
 import Reviews from './reviews.jsx'
 
-const RatingsAndReviews = ({ product_id, getProductReviews, getProductRatings, getProductRecommended, getProductCharacteristics }) => {
+const RatingsAndReviews = ({ product_id, sort, getProductReviews, getProductRatings, getProductRecommended, getProductCharacteristics }) => {
   const reviewConfig = {
     method: 'GET',
     url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews/',
     headers: { Authorization: API_KEY },
-    params: { product_id }
+    params: { product_id, sort }
   }
   const ratingConfig = {
     method: 'GET',
@@ -34,8 +34,10 @@ const RatingsAndReviews = ({ product_id, getProductReviews, getProductRatings, g
   return (
     <section id="ratings-reviews">
       <h2>Ratings &amp; Reviews</h2>
-      <Ratings />
-      <Reviews />
+      <div className="container-row">
+        <Ratings />
+        <Reviews />
+      </div>
     </section>
   )
 }
