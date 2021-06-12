@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AddToCart = ({ productStyles, currentSelectedStyle, changeSKU, quantity }) => {
+const AddToCart = ({ changeSKU, quantity, currentStyle }) => {
   const quantityArray = (quantity) => {
     let array = []
     if (!quantity) { array = ['_'] }
@@ -9,11 +9,11 @@ const AddToCart = ({ productStyles, currentSelectedStyle, changeSKU, quantity })
     return array
   }
   return (
-    !productStyles.results
+    !currentStyle
       ? <div className='carousel'>PLEASE WAIT</div>
       : <div className='carousel'>
         <select onChange={(e) => { changeSKU(e.target.value) }}>
-          {Object.values(productStyles.results[currentSelectedStyle].skus).map(({ quantity, size }, index) => (
+          {Object.values(currentStyle.skus).map(({ quantity, size }, index) => (
             <option value={quantity} key={index}>
               {size}
             </option>
