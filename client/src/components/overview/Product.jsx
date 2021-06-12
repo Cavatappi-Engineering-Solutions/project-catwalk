@@ -1,12 +1,10 @@
 import React from 'react'
 
 const Product = ({ product }) => (
-  <div className='product_information'>
+  <div className='product_info'>
     <section>
-      <h2 className='product_name'>{product.name}</h2>
       <h2 className='product_name'>{product.category}</h2>
-      <h3 className='product_name'>{product.slogan}</h3>
-      <p className='product_name'>{product.description}</p>
+      <h2 className='product_name'>{product.name}</h2>
     </section>
   </div>
 )
