@@ -8,4 +8,9 @@ const updateProductReviews = (productReviews) => ({
   payload: productReviews
 })
 
-export {getProductReviews, updateProductReviews}
+const changeSort = (sortParam) => ({
+  type: 'CHANGE_SORT',
+  payload: sortParam
+})
+
+export { getProductReviews, updateProductReviews, changeSort }
