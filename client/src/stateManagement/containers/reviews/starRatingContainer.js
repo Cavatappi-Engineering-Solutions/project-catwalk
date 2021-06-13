@@ -1,9 +1,9 @@
 import { connect } from 'react-redux'
-import NumeralRating from '../../../components/reviews/numeralRating.jsx'
+import StarRating from '../../../components/reviews/starRating.jsx'
 
 const mapStateToProps = (state) => ({
   ratings: state.ratings.ratings,
   total: state.ratings.total
 })
 
-export default connect(mapStateToProps)(NumeralRating)
+export default connect(mapStateToProps)(StarRating)
