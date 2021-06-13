@@ -11,11 +11,11 @@ import QuestionsAndAnswersContainer from './stateManagement/containers/questions
 
 const App = () => {
   return (
-    <div>
+    <React.Fragment>
       <OverviewContainer />
       <RatingsAndReviews />
       <QuestionsAndAnswersContainer />
-    </div>
+    </React.Fragment>
   )
 }
 
