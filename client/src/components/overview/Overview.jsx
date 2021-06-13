@@ -6,6 +6,7 @@ import AddToCart from './AddToCart.jsx'
 import DefaultView from './DefaultView.jsx'
 import ProductDescription from './ProductDescription.jsx'
 import Features from './Features.jsx'
+import Share from './Share.jsx'
 
 class Overview extends React.Component {
   constructor (props) {
@@ -129,6 +130,9 @@ class Overview extends React.Component {
                 changeSKU={ this.changeSKU }
                 currentStyle={ productStyles.results?.[currentSelectedStyle] }
                 />
+              </section>
+              <section>
+                <Share />
               </section>
             </section>
           </section>
