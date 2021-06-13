@@ -13,7 +13,7 @@ const AddToCart = ({ changeSKU, quantity, currentStyle }) => {
       ? <div className='selection'>PLEASE WAIT</div>
       : <div className='selection'>
         <select onChange={(e) => { changeSKU(e.target.value) }} className='size_dropdown'>
-          <option>SELECT A SIZE</option>
+          <option hidden>SELECT SIZE</option>
           {Object.values(currentStyle.skus).map(({ quantity, size }, index) => (
             <option value={quantity} key={index}>
               {size}
@@ -21,13 +21,13 @@ const AddToCart = ({ changeSKU, quantity, currentStyle }) => {
           ))}
         </select>
         <select className='quantity_dropdown'>
-          <option></option>
+          <option hidden>_</option>
           {quantityArray(quantity).map((inventory, index) =>
           <option key={index}>
             {inventory}
           </option>)}
         </select>
-        <section>
+        <section className='cart_icon'>
           <button className='cart'>Add To Cart</button>
         </section>
           <button className='heart_star_icon'>X</button>
