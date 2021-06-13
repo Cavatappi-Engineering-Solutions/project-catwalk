@@ -8,6 +8,7 @@ import rootReducer from './stateManagement/reducers'
 import ProductsContainer from './stateManagement/containers/product';
 import ProductStyleContainer from './stateManagement/containers/selectStyles';
 import RatingsAndReviews from './stateManagement/containers/reviews/ratingsAndReviewsContainer.js'
+import QuestionsAndAnswersContainer from './stateManagement/containers/questions/questionsContainer.js'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <ProductsContainer />
       <ProductStyleContainer />
       <RatingsAndReviews />
+      <QuestionsAndAnswersContainer />
     </div>
   )
 }

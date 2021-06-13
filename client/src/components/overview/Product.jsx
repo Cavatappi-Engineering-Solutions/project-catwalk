@@ -12,7 +12,6 @@ class Product extends React.Component {
     render() {
         return(
             <div className='product_information'>
-                {console.log(this.props.product)}
             </div>
         )
     }       
