@@ -12,7 +12,6 @@ import QuestionsAndAnswersContainer from './stateManagement/containers/questions
 const App = () => {
   return (
     <div>
-      <h1>Hi</h1>
       <OverviewContainer />
       <RatingsAndReviews />
       <QuestionsAndAnswersContainer />

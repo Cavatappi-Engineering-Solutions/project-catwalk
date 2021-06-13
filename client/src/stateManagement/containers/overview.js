@@ -5,7 +5,8 @@ import Overview from '../../components/overview/Overview.jsx'
 
 const mapStateToProps = state => ({
   product: state.product,
-  productStyles: state.productStyles
+  productStyles: state.productStyles,
+  ratings: state.ratings
 })
 
 const mapDispatchToProps = dispatch => ({

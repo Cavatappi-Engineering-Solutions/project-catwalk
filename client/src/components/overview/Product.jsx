@@ -1,13 +1,18 @@
 import React from 'react'
+import NumeralRating from './CopyOfNumeralRating.jsx'
+import StarRating from '../reviews/starRating.jsx'
 
-const Product = ({ product }) => (
-  <div className='product_information'>
+const Product = ({ product, ratings }) => (
+  <div>
     <section>
       <h2 className='product_name'>{product.name}</h2>
-      <h2 className='product_name'>{product.category}</h2>
-      <p className='product_name'>{product.default_price}</p>
-      <h3 className='product_name'>{product.slogan}</h3>
-      <p className='product_name'>{product.description}</p>
+      <section id='ratings' className='container'>
+        <div className='container-row'>
+        <NumeralRating ratings={ ratings }/>
+        <StarRating ratings={ ratings }/>
+        </div>
+      </section>
+      <h4 className='product_name'>{product.category}</h4>
     </section>
   </div>
 )
