@@ -11,7 +11,6 @@ import RatingsAndReviews from './stateManagement/containers/reviews/ratingsAndRe
 const App = () => {
   return (
     <div>
-      <h1>Hi</h1>
       <OverviewContainer />
       <RatingsAndReviews />
     </div>
