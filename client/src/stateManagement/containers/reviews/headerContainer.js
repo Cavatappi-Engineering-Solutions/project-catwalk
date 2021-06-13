@@ -1,6 +1,14 @@
 import { connect } from 'react-redux'
 import Header from '../../../components/reviews/header.jsx'
+import { changeSort } from '../../actions/reviewsActions.js'
 
-const mapStateToProps = (state) => ({ reviews: state.reviews })
+const mapStateToProps = (state) => ({
+  total: state.ratings.total,
+  sort: state.reviews.sort
+})
 
-export default connect(mapStateToProps)(Header)
+const mapDispatchToProps = {
+  handleSort: changeSort
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header)
