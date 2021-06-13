@@ -1,3 +1,19 @@
+$star-gray: rgba(246, 246, 246, .5);
+$bar-gray: rgba(212, 212, 212, .9);
+
+.product_url {
+  width: 100px;
+}
+
+#ratings {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  border: 2px black solid;
+  border-radius: 10px;
+  margin: 5px;
+}
+
 .container-row {
   display: flex;
   flex-direction: row;
@@ -5,9 +21,14 @@
 
 .star-rating {
   display: flex;
-  background: linear-gradient(90deg, #fc0 var(--rating), rgb(246, 246, 246) var(--rating));
+  background: linear-gradient(90deg, #fc0 var(--rating), $star-gray var(--rating));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+#ratings .star-rating {
+  font-size: 1.5em;
+  padding-top: 5px;
 }
 
 #numeral-rating {
@@ -288,4 +309,118 @@ body {
 .product_slogan_description {
   font-family: Arial, sans-serif;
   font-size: 20px;
+}
+
+//==========================================================================
+#bar-graph {
+  display: flex;
+  flex-direction: column;
+}
+
+.graph-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.num-stars {
+  display: flex;
+  justify-content: center;
+  width: 15%;
+}
+
+.num-ratings {
+  display: flex;
+  justify-content: center;
+  width: 5%;
+}
+
+.bar {
+  align-content: center;
+  width: 65%;
+  height: .7em;
+  background: linear-gradient(90deg, rgb(0, 255, 0) var(--bar-size), $bar-gray var(--bar-size));
+}
+
+#reviews {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border: 2px black solid;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.review-tile {
+  border: 1px black solid ;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  margin-bottom: 10px;
+  box-shadow: 3px 4px 2px rgba(0, 0, 0, .2);
+}
+
+.tile-header {
+  justify-content: space-between;
+}
+
+
+#characteristics {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.characteristic {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.char-name {
+  margin-bottom: 10px;
+}
+
+.char-bar {
+  width: 100%;
+  height: .7em;
+  background: linear-gradient(90deg,
+    transparent .5%,
+    $bar-gray .5%,
+    $bar-gray 19.5%,
+    transparent 19.5%,
+    transparent 20.5%,
+    $bar-gray 20.5%,
+    $bar-gray 39.5%,
+    transparent 39.5%,
+    transparent 40.5%,
+    $bar-gray 40.5%,
+    $bar-gray 59.5%,
+    transparent 59.5%,
+    transparent 60.5%,
+    $bar-gray 60.5%,
+    $bar-gray 79.5%,
+    transparent 79.5%,
+    transparent 80.5%,
+    $bar-gray 80.5%,
+    $bar-gray 99.5%,
+    transparent 99.5%
+    );
+}
+
+.char-marker {
+  position: relative;
+  left: var(--marker-position);
+  top: -1.3em;
+}
+
+.char-meaning {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

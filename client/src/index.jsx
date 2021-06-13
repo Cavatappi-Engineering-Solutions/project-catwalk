@@ -7,12 +7,14 @@ import thunk from 'redux-thunk'
 import rootReducer from './stateManagement/reducers'
 import { OverviewContainer } from './stateManagement/containers/overview'
 import RatingsAndReviews from './stateManagement/containers/reviews/ratingsAndReviewsContainer.js'
+import QuestionsAndAnswersContainer from './stateManagement/containers/questions/questionsContainer.js'
 
 const App = () => {
   return (
     <div>
       <OverviewContainer />
       <RatingsAndReviews />
+      <QuestionsAndAnswersContainer />
     </div>
   )
 }
