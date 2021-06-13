@@ -10,22 +10,27 @@ const AddToCart = ({ changeSKU, quantity, currentStyle }) => {
   }
   return (
     !currentStyle
-      ? <div className='carousel'>PLEASE WAIT</div>
-      : <div className='carousel'>
-        <select onChange={(e) => { changeSKU(e.target.value) }}>
+      ? <div className='selection'>PLEASE WAIT</div>
+      : <div className='selection'>
+        <select onChange={(e) => { changeSKU(e.target.value) }} className='size_dropdown'>
+          <option>SELECT A SIZE</option>
           {Object.values(currentStyle.skus).map(({ quantity, size }, index) => (
             <option value={quantity} key={index}>
               {size}
             </option>
           ))}
         </select>
-        <select>
+        <select className='quantity_dropdown'>
+          <option></option>
           {quantityArray(quantity).map((inventory, index) =>
           <option key={index}>
             {inventory}
           </option>)}
         </select>
-        <button>Add To Cart</button>
+        <section>
+          <button className='cart'>Add To Cart</button>
+        </section>
+          <button className='heart_star_icon'>X</button>
       </div>
   )
 }

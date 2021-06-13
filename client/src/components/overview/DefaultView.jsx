@@ -16,7 +16,6 @@ const DefaultView = ({ currentStylePhotos, changeView, changeMainPhoto, previous
       ? <div className='default_view'>PLEASE WAIT</div>
       : <div className='default_view'>
           <section className='default_view_photos'>
-            {console.log(currentStylePhotos)}
             <section className='expand_view_button_wrap'>
               <button onClick={() => { changeView() }} className='expand_view_button'>O</button>
             </section>

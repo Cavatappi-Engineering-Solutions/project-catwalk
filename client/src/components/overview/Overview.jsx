@@ -5,7 +5,7 @@ import Carousel from './Carousel.jsx'
 import AddToCart from './AddToCart.jsx'
 import DefaultView from './DefaultView.jsx'
 import ProductDescription from './ProductDescription.jsx'
-import StarRating from '../reviews/starRating.jsx'
+import Features from './Features.jsx'
 
 class Overview extends React.Component {
   constructor (props) {
@@ -101,40 +101,45 @@ class Overview extends React.Component {
     const { product, productStyles, ratings } = this.props
     return (
       <section id='overview'>
-        <section id='combined_view_product_information'>
-          <section id='view'>
-            { this.imageGallery() }
+        <section id='combined_top_bottom'>
+          <section id='combined_view_product_information'>
+            <section id='view'>
+              { this.imageGallery() }
+            </section>
+            <section id='product_information'>
+              <section id='product_info'>
+                <Product
+                product={ product }
+                ratings={ ratings }
+                />
+              </section>
+              <section id='product_styles'>
+                <SelectStyles
+                productStyles={ productStyles }
+                currentSelectedStyle= { currentSelectedStyle }
+                changeSelectedStyle={ this.changeSelectedStyle }
+                currentStyle={ productStyles.results?.[currentSelectedStyle] }
+                />
+              </section>
+              <section id='add_to_cart'>
+                <AddToCart
+                quantity={ quantity }
+                productStyles={ productStyles }
+                currentSelectedStyle= { currentSelectedStyle }
+                changeSKU={ this.changeSKU }
+                currentStyle={ productStyles.results?.[currentSelectedStyle] }
+                />
+              </section>
+            </section>
           </section>
-          <section id='product_information'>
-            <section id='ratings' className='container'>
-              <div className='container-row'>
-              <StarRating ratings={ ratings }/>
-              </div>
+          <section id='product_description_feature'>
+            <section id='product_description'>
+              <ProductDescription product={ product }/>
             </section>
-            <section>
-              <Product product={ product }/>
-            </section>
-            <section id='product_styles'>
-              <SelectStyles
-              productStyles={ productStyles }
-              currentSelectedStyle= { currentSelectedStyle }
-              changeSelectedStyle={ this.changeSelectedStyle }
-              currentStyle={ productStyles.results?.[currentSelectedStyle] }
-              />
-            </section>
-            <section id='add_to_cart'>
-              <AddToCart
-              quantity={ quantity }
-              productStyles={ productStyles }
-              currentSelectedStyle= { currentSelectedStyle }
-              changeSKU={ this.changeSKU }
-              currentStyle={ productStyles.results?.[currentSelectedStyle] }
-              />
+            <section id='product_features'>
+              <Features productFeatures={ product.features }/>
             </section>
           </section>
-        </section>
-        <section id='product_description'>
-          <ProductDescription product={ product }/>
         </section>
       </section>
     )

@@ -15,13 +15,17 @@ const Carousel = ({ currentStylePhotos, productStyles, previousStyle, nextStyle,
     !currentStylePhotos
       ? <div className='carousel'>PLEASE WAIT</div>
       : <div className='carousel'>
-          <button onClick={() => { changeView() }}>O</button>
-          <section className='product_urls'>
+          <section className='expand_view_button_wrap'>
+            <button onClick={() => { changeView() }} className='expand_view_button'>O</button>
+          </section>
+          <section className='left_right_arrow_wrap'>
             <FaArrowAltCircleLeft className='left_arrow' onClick={() => { previousStyle() }}/>
             <FaArrowAltCircleRight className='right_arrow' onClick={() => { nextStyle() }}/>
+          </section>
+          <section className='product_urls'>
             {matchingProductStyle
               ? <div>
-                  <img src={`${matchingProductStyle.url}`} className="current_display_photo"/>
+                  <img src={`${matchingProductStyle.url}`} className="carousel_current_display_photo"/>
                 </div>
               : <span>Unable to Load Image</span>}
           </section>
