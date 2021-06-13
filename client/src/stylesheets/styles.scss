@@ -1,51 +1,19 @@
 $star-gray: rgba(246, 246, 246, .5);
 $bar-gray: rgba(212, 212, 212, .9);
 
-.product_url {
-  width: 100px;
-}
-
-#ratings {
-  display: flex;
-  flex-direction: column;
-  width: 25%;
-  border: 2px black solid;
-  border-radius: 10px;
-  margin: 5px;
-}
-
-.container-row {
-  display: flex;
-  flex-direction: row;
-}
-
-.star-rating {
-  display: flex;
-  background: linear-gradient(90deg, #fc0 var(--rating), $star-gray var(--rating));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-#ratings .star-rating {
-  font-size: 1.5em;
-  padding-top: 5px;
-}
-
-#numeral-rating {
-  display: flex;
-  font-size: 3em;
-  padding-right: 20px;
-}
-
-#ratings .star-rating {
-  font-size: 1.5em;
-  padding-top: 5px;
-}
-
-//=============================================================================
 //variables
 $displayFlex: flex;
 
+#app {
+  display: $displayFlex;
+  flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+//=============================================================================
 body {
   margin: 0px;
   padding: 0px;
@@ -114,6 +82,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
+  z-index: 10000;
 }
 
 .carousel_current_display_photo {
@@ -210,7 +179,6 @@ body {
   position: relative;
   display: $displayFlex;
   font-size: 30px;
-  font-family: Arial, sans-serif;
   width: 550px;
   // background-color: lightyellow;
 }
@@ -224,13 +192,11 @@ body {
 
 .style_price {
   font-size: 25px;
-  font-family: Arial, sans-serif;
   margin-top: 5px;
 }
 
 .style_name {
   font-size: 25px;
-  font-family: Arial, sans-serif;
   margin-top: 35px;
 }
 
@@ -263,7 +229,6 @@ body {
   padding: 12px;
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
   cursor: pointer;
-  font-family: Arial, sans-serif;
   font-size: 20px;
   background-color: white;
 }
@@ -301,17 +266,52 @@ body {
   display: $displayFlex;
   justify-content: center;
   align-items: center;
-  font-family: Arial, sans-serif;
   font-size: 20px;
   margin-left: 40px;
 }
 
 .product_slogan_description {
-  font-family: Arial, sans-serif;
   font-size: 20px;
 }
 
 //==========================================================================
+#ratings {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  border: 2px black solid;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.container-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.star-rating {
+  display: flex;
+  background: linear-gradient(90deg, #fc0 var(--rating), $star-gray var(--rating));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#ratings .star-rating {
+  font-size: 1.5em;
+  padding-top: 5px;
+}
+
+#numeral-rating {
+  display: flex;
+  font-size: 3em;
+  padding-right: 20px;
+}
+
+#ratings .star-rating {
+  font-size: 1.5em;
+  padding-top: 5px;
+}
+
 #bar-graph {
   display: flex;
   flex-direction: column;

@@ -99,7 +99,7 @@ class Overview extends React.Component {
 
   render () {
     const { currentSelectedStyle, quantity } = this.state
-    const { product, productStyles, ratings } = this.props
+    const { product, productStyles, ratings, total } = this.props
     return (
       <section id='overview'>
         <section id='combined_top_bottom'>
@@ -112,6 +112,7 @@ class Overview extends React.Component {
                 <Product
                 product={ product }
                 ratings={ ratings }
+                total={ total }
                 />
               </section>
               <section id='product_styles'>
