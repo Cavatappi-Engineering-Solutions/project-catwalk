@@ -45,6 +45,7 @@ class Overview extends React.Component {
       nextStyle={ this.nextStyle }
       length={ length }
       changeView={ this.changeView }
+      changeMainPhoto={ this.changeMainPhoto }
       />
     } else {
       return <DefaultView
