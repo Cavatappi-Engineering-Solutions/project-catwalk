@@ -2,7 +2,7 @@ import React from 'react'
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa'
 import Enlarge from '../../assets/icons/enlarge.png'
 
-const Carousel = ({ currentStylePhotos, previousStyle, nextStyle, length, changeView }) => {
+const Carousel = ({ currentStylePhotos, previousStyle, nextStyle, length, changeView, changeMainPhoto }) => {
   const matchingProductStyle = currentStylePhotos
     ? currentStylePhotos.reduce(
       (acc, photo, index) => {
@@ -17,7 +17,7 @@ const Carousel = ({ currentStylePhotos, previousStyle, nextStyle, length, change
       ? <div className='carousel'>PLEASE WAIT</div>
       : <div className='carousel'>
           <section className='expand_view_button_wrap'>
-            <button onClick={() => { changeView() }} className='expand_view_button'><img src={Enlarge}/></button>
+            <button onClick={() => { changeView() }} className='carousel_expand_view_button'><img src={Enlarge}/></button>
           </section>
           <section className='left_right_arrow_wrap'>
             <FaArrowAltCircleLeft className='left_arrow' onClick={() => { previousStyle() }}/>
@@ -29,6 +29,12 @@ const Carousel = ({ currentStylePhotos, previousStyle, nextStyle, length, change
                   <img src={`${matchingProductStyle.url}`} className="carousel_current_display_photo"/>
                 </div>
               : <span>Unable to Load Image</span>}
+          </section>
+          <section className='carousel_product_thumbnail_url_photos'>
+            {currentStylePhotos.map((photo, index) => (
+              <div key={index}>
+                <img src={`${photo.thumbnail_url}`} onClick={() => { changeMainPhoto(index) }} className='carousel_product_thumbnail_url'/>
+              </div>))}
           </section>
       </div>
   )
