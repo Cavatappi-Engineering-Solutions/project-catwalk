@@ -39,13 +39,11 @@
 }
 
 #bar-graph {
-  display: flex;
-  flex-direction: column;
+  @include displayCol;
 }
 
 .graph-row {
-  display: flex;
-  flex-direction: row;
+  @include displayRow;
   align-items: center;
   justify-content: space-around;
   width: 100%;
