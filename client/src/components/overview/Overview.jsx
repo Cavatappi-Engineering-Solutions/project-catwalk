@@ -17,7 +17,6 @@ class Overview extends React.Component {
       currentSelectedStyle: 0,
       length: 0,
       quantity: ''
-      // sizeSelected: false,
     }
     this.previousStyle = this.previousStyle.bind(this)
     this.nextStyle = this.nextStyle.bind(this)
@@ -99,7 +98,7 @@ class Overview extends React.Component {
 
   render () {
     const { currentSelectedStyle, quantity } = this.state
-    const { product, productStyles, ratings, total } = this.props
+    const { product, productStyles, ratings } = this.props
     return (
       <section id='overview'>
         <section id='combined_top_bottom'>
@@ -112,7 +111,7 @@ class Overview extends React.Component {
                 <Product
                 product={ product }
                 ratings={ ratings }
-                total={ total }
+                total={ ratings.total }
                 />
               </section>
               <section id='product_styles'>
