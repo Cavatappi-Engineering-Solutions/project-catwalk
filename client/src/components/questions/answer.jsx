@@ -9,7 +9,7 @@ const Answer = (props) => {
         storage.push(answers[key])
     }
 
-    const list = <div>{storage.map((answer) => <div>{answer.body}</div>)}</div>
+    const list = <div>{storage.map((answer) => <div>{answer.answerer_name}&nbsp;{answer.body}&nbsp;{answer.date}</div>)}</div>
     const empty = <div>There are no answers!</div>
 
     return (
