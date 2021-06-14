@@ -16,7 +16,8 @@ class Overview extends React.Component {
       currentProduct: '',
       currentSelectedStyle: 0,
       length: 0,
-      quantity: ''
+      quantity: '',
+      icon: false
     }
     this.previousStyle = this.previousStyle.bind(this)
     this.nextStyle = this.nextStyle.bind(this)
@@ -25,6 +26,7 @@ class Overview extends React.Component {
     this.changeView = this.changeView.bind(this)
     this.changeSKU = this.changeSKU.bind(this)
     this.changeMainPhoto = this.changeMainPhoto.bind(this)
+    this.changeIcon = this.changeIcon.bind(this)
   }
 
   componentDidMount () {
@@ -73,6 +75,10 @@ class Overview extends React.Component {
     this.setState({ view: !this.state.view })
   }
 
+  changeIcon () {
+    this.setState({ icon: !this.state.icon })
+  }
+
   changeSelectedStyle (index) {
     this.setState({ currentSelectedStyle: index, length: 0 })
   }
@@ -98,7 +104,7 @@ class Overview extends React.Component {
   }
 
   render () {
-    const { currentSelectedStyle, quantity } = this.state
+    const { currentSelectedStyle, quantity, icon } = this.state
     const { product, productStyles, ratings } = this.props
     return (
       <section id='overview'>
@@ -130,6 +136,8 @@ class Overview extends React.Component {
                 currentSelectedStyle= { currentSelectedStyle }
                 changeSKU={ this.changeSKU }
                 currentStyle={ productStyles.results?.[currentSelectedStyle] }
+                icon={ icon }
+                changeIcon={ this.changeIcon }
                 />
               </section>
               <section>

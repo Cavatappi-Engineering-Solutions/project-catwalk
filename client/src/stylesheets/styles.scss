@@ -255,11 +255,14 @@ body {
   flex-wrap: wrap;
 }
 
-.size_dropdown, .quantity_dropdown, .cart, .heart_star_icon {
+.size_dropdown, .quantity_dropdown, .cart {
   padding: 12px;
+  font-size: 20px;
+}
+
+.size_dropdown, .quantity_dropdown, .cart, .heart_icon, .star_icon{
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
   cursor: pointer;
-  font-size: 20px;
   background-color: white;
 }
 

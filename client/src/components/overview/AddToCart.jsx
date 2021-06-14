@@ -1,6 +1,8 @@
 import React from 'react'
+import Heart from '../../assets/icons/heart.png'
+import Star from '../../assets/icons/star.png'
 
-const AddToCart = ({ changeSKU, quantity, currentStyle }) => {
+const AddToCart = ({ changeSKU, quantity, currentStyle, icon, changeIcon }) => {
   const quantityArray = (quantity) => {
     let array = []
     if (!quantity) { array = ['_'] }
@@ -30,7 +32,9 @@ const AddToCart = ({ changeSKU, quantity, currentStyle }) => {
         <section className='cart_icon'>
           <button className='cart'>Add To Cart</button>
         </section>
-          <button className='heart_star_icon'>X</button>
+        {icon
+          ? <button onClick={() => changeIcon()} className='heart_icon'><img src={ Heart }/></button>
+          : <button onClick={() => changeIcon()} className='star_icon'><img src={ Star }/></button>}
       </div>
   )
 }
