@@ -37,3 +37,11 @@ export const retrieveQuestions = () => {
             })
     }
 }
+
+export const markQHelpful = () => {
+    return (dispatch) => {
+        const options = {
+            method: 'PUT'
+        }
+    }
+}
