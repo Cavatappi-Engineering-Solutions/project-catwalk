@@ -7,6 +7,7 @@ import DefaultView from './DefaultView.jsx'
 import ProductDescription from './ProductDescription.jsx'
 import Features from './Features.jsx'
 import Share from './Share.jsx'
+import Cavatappi from '../../assets/icons/cavatappi.png'
 
 class Overview extends React.Component {
   constructor (props) {
@@ -16,8 +17,8 @@ class Overview extends React.Component {
       currentProduct: '',
       currentSelectedStyle: 0,
       length: 0,
-      quantity: ''
-      // sizeSelected: false,
+      quantity: '',
+      icon: false
     }
     this.previousStyle = this.previousStyle.bind(this)
     this.nextStyle = this.nextStyle.bind(this)
@@ -26,6 +27,7 @@ class Overview extends React.Component {
     this.changeView = this.changeView.bind(this)
     this.changeSKU = this.changeSKU.bind(this)
     this.changeMainPhoto = this.changeMainPhoto.bind(this)
+    this.changeIcon = this.changeIcon.bind(this)
   }
 
   componentDidMount () {
@@ -46,6 +48,7 @@ class Overview extends React.Component {
       nextStyle={ this.nextStyle }
       length={ length }
       changeView={ this.changeView }
+      changeMainPhoto={ this.changeMainPhoto }
       />
     } else {
       return <DefaultView
@@ -73,6 +76,10 @@ class Overview extends React.Component {
     this.setState({ view: !this.state.view })
   }
 
+  changeIcon () {
+    this.setState({ icon: !this.state.icon })
+  }
+
   changeSelectedStyle (index) {
     this.setState({ currentSelectedStyle: index, length: 0 })
   }
@@ -98,54 +105,60 @@ class Overview extends React.Component {
   }
 
   render () {
-    const { currentSelectedStyle, quantity } = this.state
+    const { currentSelectedStyle, quantity, icon } = this.state
     const { product, productStyles, ratings } = this.props
     return (
-      <section id='overview'>
-        <section id='combined_top_bottom'>
-          <section id='combined_view_product_information'>
-            <section id='view'>
-              { this.imageGallery() }
+      <div>
+        <h1 id='logo'><img src={ Cavatappi }/>CAVATAPPI</h1>
+        <section id='overview'>
+          <section id='combined_top_bottom'>
+            <section id='combined_view_product_information'>
+              <section id='view'>
+                { this.imageGallery() }
+              </section>
+              <section id='product_information'>
+                <section id='product_info'>
+                  <Product
+                  product={ product }
+                  ratings={ ratings }
+                  total={ ratings.total }
+                  />
+                </section>
+                <section id='product_styles'>
+                  <SelectStyles
+                  productStyles={ productStyles }
+                  currentSelectedStyle= { currentSelectedStyle }
+                  changeSelectedStyle={ this.changeSelectedStyle }
+                  currentStyle={ productStyles.results?.[currentSelectedStyle] }
+                  />
+                </section>
+                <section id='add_to_cart'>
+                  <AddToCart
+                  quantity={ quantity }
+                  productStyles={ productStyles }
+                  currentSelectedStyle= { currentSelectedStyle }
+                  changeSKU={ this.changeSKU }
+                  currentStyle={ productStyles.results?.[currentSelectedStyle] }
+                  icon={ icon }
+                  changeIcon={ this.changeIcon }
+                  />
+                </section>
+                <section>
+                  <Share />
+                </section>
+              </section>
             </section>
-            <section id='product_information'>
-              <section id='product_info'>
-                <Product
-                product={ product }
-                ratings={ ratings }
-                />
+            <section id='product_description_feature'>
+              <section id='product_description'>
+                <ProductDescription product={ product }/>
               </section>
-              <section id='product_styles'>
-                <SelectStyles
-                productStyles={ productStyles }
-                currentSelectedStyle= { currentSelectedStyle }
-                changeSelectedStyle={ this.changeSelectedStyle }
-                currentStyle={ productStyles.results?.[currentSelectedStyle] }
-                />
+              <section id='product_features'>
+                <Features productFeatures={ product.features }/>
               </section>
-              <section id='add_to_cart'>
-                <AddToCart
-                quantity={ quantity }
-                productStyles={ productStyles }
-                currentSelectedStyle= { currentSelectedStyle }
-                changeSKU={ this.changeSKU }
-                currentStyle={ productStyles.results?.[currentSelectedStyle] }
-                />
-              </section>
-              <section>
-                <Share />
-              </section>
-            </section>
-          </section>
-          <section id='product_description_feature'>
-            <section id='product_description'>
-              <ProductDescription product={ product }/>
-            </section>
-            <section id='product_features'>
-              <Features productFeatures={ product.features }/>
             </section>
           </section>
         </section>
-      </section>
+      </div>
     )
   }
 }
