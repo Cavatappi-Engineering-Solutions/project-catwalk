@@ -1,12 +1,10 @@
 #app {
-  display: flex;
-  flex-direction: column;
+  @include displayCol;
   align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
   background: linear-gradient(120deg, rgba(249, 237, 212, 0.5), rgba(148, 141, 127, 0.5));
 }
 
 #logo {
-  display: $displayFlex;
-  font-size: 50px;
+  @include displayRow;
+  align-items: center;
 }
