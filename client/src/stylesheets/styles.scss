@@ -118,6 +118,10 @@ body {
   border: 3px solid; 
 }
 
+.current_display_photo:hover {
+  transform: scale(1.25);
+}
+
 .default_product_thumbnail_url_photos {
   display: $displayFlex;
   flex-direction: column;
