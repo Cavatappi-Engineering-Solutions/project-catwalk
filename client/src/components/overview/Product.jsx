@@ -10,9 +10,12 @@ const Product = ({ product, ratings, total }) => (
         <div className='container-row'>
         <NumeralRating ratings={ ratings }/>
         <StarRating ratings={ ratings } total={ total }/>
+        <section className='read_all_reviews'>
+          <a href="#">Read all Reviews</a>
+        </section>
         </div>
       </section>
-      <h4 className='product_name'>{product.category}</h4>
+      <h4 className='product_category'>{product.category}</h4>
     </section>
   </div>
 )
