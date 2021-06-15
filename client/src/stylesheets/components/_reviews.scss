@@ -156,8 +156,29 @@
 }
 
 .tile-summary {
-
   font-weight: bold;
   overflow-wrap: normal;
   word-break: normal;
+}
+
+.tile-helpful-report span {
+  font-size: 12px;
+  padding-right: 5px;
+}
+
+.tile-yes, .tile-report {
+  text-decoration: underline;
+}
+
+.tile-yes:hover, .tile-report:hover {
+  color: purple;
+}
+
+.tile-helpfulness {
+  margin-right: 5px;
+}
+
+.tile-report {
+  padding-left: 10px;
+  border-left: 1px solid rgba(0, 0, 0, 0.5);
 }
