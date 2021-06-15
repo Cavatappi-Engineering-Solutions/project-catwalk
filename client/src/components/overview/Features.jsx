@@ -6,7 +6,7 @@ const Features = ({ productFeatures }) => (
     ? <div className='features'>PLEASE WAIT</div>
     : <div className='features'>
         {productFeatures.map((feature, index) =>
-          <div key={index} className='all_features'><img src={ Checkmark } className='checkmark'/>{`${feature.feature}: ${feature.value}`}</div>)}
+          <div key={index} className='all_features'><img src={ Checkmark } className='checkmark'/>{feature.value}</div>)}
     </div>
 )
 
