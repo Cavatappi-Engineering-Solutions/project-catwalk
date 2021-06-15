@@ -1,10 +1,21 @@
 import React from 'react'
 import Review from './reviewTile.jsx'
 
-const ReviewDisplay = ({ reviews }) => (
-  <div>
-    {reviews.map((review) => (<Review data={review} key={review.review_id} />))}
-  </div>
-)
+const ReviewDisplay = ({ reviews, count }) => {
+  if (reviews.length < 1) {
+    return <div>There are no reviews that match</div>
+  } else {
+    const reviewList = []
+    for (let i = 0; i < count; i++) {
+      reviewList.push((<Review data={reviews[i]} key={reviews[i].review_id} />))
+    }
+
+    return (
+    <div>
+      {reviewList}
+    </div>
+    )
+  }
+}
 
 export default ReviewDisplay
