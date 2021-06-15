@@ -25,9 +25,9 @@ const AddToCart = ({ changeSKU, quantity, currentStyle, icon, changeIcon }) => {
         <select className='quantity_dropdown'>
           <option hidden>_</option>
           {quantityArray(quantity).map((inventory, index) =>
-          <option key={index}>
-            {inventory}
-          </option>)}
+            (!inventory
+              ? <option>OUT OF STOCK</option>
+              : <option key={index}>{inventory}</option>))}
         </select>
         <section className='cart_icon'>
           <button className='cart'>Add To Cart</button>

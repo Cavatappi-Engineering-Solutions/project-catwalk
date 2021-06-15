@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa'
 import Enlarge from '../../assets/icons/enlarge.png'
+import Unavailable from '../../assets/icons/Unavailable.png'
 
 const DefaultView = ({ currentStylePhotos, changeView, changeMainPhoto, previousStyle, nextStyle, length }) => {
   const matchingProductStyle = currentStylePhotos
@@ -24,11 +25,13 @@ const DefaultView = ({ currentStylePhotos, changeView, changeMainPhoto, previous
               <FaArrowAltCircleLeft className='left_arrow' onClick={() => { previousStyle() }}/>
               <FaArrowAltCircleRight className='right_arrow' onClick={() => { nextStyle() }}/>
             </section>
-              {matchingProductStyle
+              {matchingProductStyle.url !== null
                 ? <div>
                     <img src={`${matchingProductStyle.url}`} className="current_display_photo"/>
                   </div>
-                : <span>Unable to Load Image</span>}
+                : <div>
+                    <img src={Unavailable} className="current_display_photo"/>
+                  </div>}
           </section>
           <section className='default_product_thumbnail_url_photos'>
             {currentStylePhotos.map((photo, index) => (
