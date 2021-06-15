@@ -10,11 +10,11 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  retrieveProducts: () => {
-    dispatch(retrieveProduct())
+  retrieveProducts: (id) => {
+    dispatch(retrieveProduct(id))
   },
-  retrieveStyles: () => {
-    dispatch(retrieveProductStyle())
+  retrieveStyles: (id) => {
+    dispatch(retrieveProductStyle(id))
   }
 })
 

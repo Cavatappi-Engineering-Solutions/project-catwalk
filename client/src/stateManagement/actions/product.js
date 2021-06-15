@@ -10,10 +10,10 @@ const getProducts = (data) => ({
   payload: data
 })
 
-export const retrieveProduct = () => dispatch => {
+export const retrieveProduct = (id) => dispatch => {
   const options = {
     method: 'GET',
-    url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/11001',
+    url: `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/${id}`,
     headers: { Authorization: API_KEY }
   }
   return axios(options)

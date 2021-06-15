@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa'
 import Enlarge from '../../assets/icons/enlarge.png'
-import Unavailable from '../../assets/icons/Unavailable.png'
+import Unavailable from '../../assets/icons/unavailable.png'
 
 const DefaultView = ({ currentStylePhotos, changeView, changeMainPhoto, previousStyle, nextStyle, length }) => {
   const matchingProductStyle = currentStylePhotos
