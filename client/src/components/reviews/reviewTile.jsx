@@ -3,7 +3,7 @@ import StarRating from './starRating.jsx'
 
 const Review = ({ data }) => (
   <div className="review-tile container-col">
-    <div className="tile-header container-row">
+    <div className="tile-header">
       <StarRating ratings={{ [data.rating]: '1' }} total={1} />
       <span>{`${data.reviewer_name}, ${data.date}`}</span>
     </div>
