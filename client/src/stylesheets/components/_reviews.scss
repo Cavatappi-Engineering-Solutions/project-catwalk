@@ -4,15 +4,14 @@
 
 #ratings-reviews {
   @include displayCol;
-  // align-items: flex-start;
   width: 85%;
   margin-top: 50px;
   margin-bottom: 50px;
 }
 
 #ratings-reviews .container-row {
-  width: 100%;
   justify-content: space-between;
+  width: 100%;
 }
 
 /*============================================
@@ -50,18 +49,17 @@
 }
 
 .num-stars {
-  justify-content: center;
+  text-align: center;
   white-space: nowrap;
   width: 15%;
 }
 
 .num-ratings {
-  justify-content: center;
+  text-align: center;
   width: 5%;
 }
 
 .bar {
-  align-content: center;
   width: 65%;
   height: .7em;
   background: linear-gradient(90deg, rgba(4, 136, 4, 0.7) var(--bar-size), $bar-gray var(--bar-size));
@@ -74,19 +72,15 @@
 #reviews {
  @include displayCol;
   width: 65%;
-  // margin: 5px;
-  // padding: 10px;
 }
 
 .review-tile {
-  // border: 1px black solid ;
-  // border-radius: 5px;
-  // padding: 5px;
   margin: 5px;
   margin-bottom: 10px;
 }
 
 .tile-header {
+  @include displayRow;
   justify-content: space-between;
 }
 
