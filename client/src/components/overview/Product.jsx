@@ -1,14 +1,12 @@
 import React from 'react'
-import NumeralRating from '../reviews/numeralRating.jsx'
 import StarRating from '../reviews/starRating.jsx'
 
 const Product = ({ product, ratings, total }) => (
   <div>
-    <h2 className='product_name'>{product.name}</h2>
-    <section id='ratings' className='container'>
+    <h1 className='product_name'>{product.name}</h1>
+    <section id='products' className='container'>
       <div className='container-row'>
-      <NumeralRating ratings={ ratings } total={ total }/>
-      <StarRating ratings={ ratings } total={ total }/>
+        <StarRating ratings={ ratings } total={ total }/>
       <section className='read_all_reviews'>
         <a href="#">Read all Reviews</a>
       </section>
