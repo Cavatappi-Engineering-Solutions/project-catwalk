@@ -21,6 +21,13 @@
 #ratings {
   @include displayCol;
   width: 25%;
+  min-width: 275px;
+}
+
+#ratings-header {
+  @include displayRow;
+  align-items: center;
+
 }
 
 .container-row {
@@ -28,12 +35,11 @@
 }
 
 #ratings .star-rating {
-  font-size: 1.5em;
-  padding-top: 5px;
+  font-size: 2rem;
 }
 
 #numeral-rating {
-  font-size: 3em;
+  font-size: 3rem;
   padding-right: 20px;
 }
 
@@ -61,29 +67,9 @@
 
 .bar {
   width: 65%;
-  height: .7em;
+  height: .7rem;
   background: linear-gradient(90deg, rgba(4, 136, 4, 0.7) var(--bar-size), $bar-gray var(--bar-size));
 }
-
-/*============================================
-  REVIEWS DISPLAY
-============================================*/
-
-#reviews {
- @include displayCol;
-  width: 65%;
-}
-
-.review-tile {
-  margin: 5px;
-  margin-bottom: 10px;
-}
-
-.tile-header {
-  @include displayRow;
-  justify-content: space-between;
-}
-
 
 #characteristics {
   @include displayCol;
@@ -139,6 +125,39 @@
   justify-content: space-between;
 }
 
+/*============================================
+  REVIEWS DISPLAY
+============================================*/
+
+#reviews {
+ @include displayCol;
+  width: 65%;
+  min-width: 550px;
+}
+
+.review-tile {
+  margin: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem;
+}
+
+.tile-header {
+  @include displayRow;
+  justify-content: space-between;
+}
+
 #reviews-header-sort {
   background: transparent;
+}
+
+.tile-date {
+  font-size: calc(12px + .2vh);
+}
+
+.tile-summary {
+
+  font-weight: bold;
+  overflow-wrap: normal;
+  word-break: normal;
 }
