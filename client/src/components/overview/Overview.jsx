@@ -14,20 +14,22 @@ class Overview extends React.Component {
     super(props)
     this.state = {
       view: false,
+      icon: false,
+      quantity: '',
       currentProduct: '',
       currentSelectedStyle: 0,
       length: 0,
-      quantity: '',
-      icon: false
+      checkMark: false
     }
+    this.imageGallery = this.imageGallery.bind(this)
+    this.changeMainPhoto = this.changeMainPhoto.bind(this)
+    this.changeSKU = this.changeSKU.bind(this)
+    this.changeView = this.changeView.bind(this)
+    this.changeIcon = this.changeIcon.bind(this)
+    this.changeSelectedStyle = this.changeSelectedStyle.bind(this)
     this.previousStyle = this.previousStyle.bind(this)
     this.nextStyle = this.nextStyle.bind(this)
-    this.changeSelectedStyle = this.changeSelectedStyle.bind(this)
-    this.imageGallery = this.imageGallery.bind(this)
-    this.changeView = this.changeView.bind(this)
-    this.changeSKU = this.changeSKU.bind(this)
-    this.changeMainPhoto = this.changeMainPhoto.bind(this)
-    this.changeIcon = this.changeIcon.bind(this)
+    this.changeCheckMark = this.changeCheckMark.bind(this)
   }
 
   componentDidMount () {
@@ -43,10 +45,10 @@ class Overview extends React.Component {
       return <Carousel
       productStyles={ productStyles }
       currentSelectedStyle= { currentSelectedStyle }
+      length={ length }
       currentStylePhotos={ productStyles.results?.[currentSelectedStyle].photos }
       previousStyle={ this.previousStyle }
       nextStyle={ this.nextStyle }
-      length={ length }
       changeView={ this.changeView }
       changeMainPhoto={ this.changeMainPhoto }
       />
@@ -84,6 +86,10 @@ class Overview extends React.Component {
     this.setState({ currentSelectedStyle: index, length: 0 })
   }
 
+  changeCheckMark () {
+    this.setState({ checkMark: !this.state.checkMark })
+  }
+
   previousStyle () {
     const { length, currentSelectedStyle } = this.state
     const { productStyles } = this.props
@@ -105,7 +111,7 @@ class Overview extends React.Component {
   }
 
   render () {
-    const { currentSelectedStyle, quantity, icon } = this.state
+    const { currentSelectedStyle, quantity, icon, checkMark } = this.state
     const { product, productStyles, ratings } = this.props
     return (
       <div>
@@ -130,6 +136,9 @@ class Overview extends React.Component {
                   currentSelectedStyle= { currentSelectedStyle }
                   changeSelectedStyle={ this.changeSelectedStyle }
                   currentStyle={ productStyles.results?.[currentSelectedStyle] }
+                  checkMark={ checkMark }
+                  changeCheckMark={ this.changeCheckMark }
+                  // currentSelectedStyle={ currentSelectedStyle }
                   />
                 </section>
                 <section id='add_to_cart'>
