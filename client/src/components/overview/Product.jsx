@@ -4,8 +4,6 @@ import StarRating from '../reviews/starRating.jsx'
 
 const Product = ({ product, ratings, total }) => (
   <div>
-    {console.log(ratings)}
-    {console.log(total)}
     <h2 className='product_name'>{product.name}</h2>
     <section id='ratings' className='container'>
       <div className='container-row'>
