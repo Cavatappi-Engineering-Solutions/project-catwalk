@@ -136,15 +136,20 @@
 }
 
 .review-tile {
+  @include displayCol;
   margin: 1.5rem;
-  padding-bottom: 1rem;
   border-bottom: 2px solid rgba(0, 0, 0, 0.5);
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .tile-header {
   @include displayRow;
   justify-content: space-between;
+  padding: 5px;
+}
+
+.tile-header .star-rating {
+  font-size: 1.5rem;
 }
 
 #reviews-header-sort {
@@ -159,6 +164,19 @@
   font-weight: bold;
   overflow-wrap: normal;
   word-break: normal;
+  padding: 5px;
+}
+
+.tile-body {
+  padding: 5px;
+}
+
+.til-recommend {
+  padding: 5px;
+}
+
+.tile-helpful-report {
+  padding: 5px;
 }
 
 .tile-helpful-report span {
