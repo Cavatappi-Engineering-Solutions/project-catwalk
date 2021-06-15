@@ -1,0 +1,150 @@
+/*============================================
+  RATINGS AND REVIEWS
+============================================*/
+
+#ratings-reviews {
+  @include displayCol;
+  // align-items: flex-start;
+  width: 85%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#ratings-reviews .container-row {
+  width: 100%;
+  justify-content: space-between;
+}
+
+/*============================================
+  RATINGS METADATA
+============================================*/
+
+#ratings {
+  @include displayCol;
+  width: 25%;
+}
+
+.container-row {
+ @include displayRow;
+}
+
+#ratings .star-rating {
+  font-size: 1.5em;
+  padding-top: 5px;
+}
+
+#numeral-rating {
+  font-size: 3em;
+  padding-right: 20px;
+}
+
+#bar-graph {
+  @include displayCol;
+}
+
+.graph-row {
+  @include displayRow;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.num-stars {
+  justify-content: center;
+  white-space: nowrap;
+  width: 15%;
+}
+
+.num-ratings {
+  justify-content: center;
+  width: 5%;
+}
+
+.bar {
+  align-content: center;
+  width: 65%;
+  height: .7em;
+  background: linear-gradient(90deg, rgba(4, 136, 4, 0.7) var(--bar-size), $bar-gray var(--bar-size));
+}
+
+/*============================================
+  REVIEWS DISPLAY
+============================================*/
+
+#reviews {
+ @include displayCol;
+  width: 65%;
+  // margin: 5px;
+  // padding: 10px;
+}
+
+.review-tile {
+  // border: 1px black solid ;
+  // border-radius: 5px;
+  // padding: 5px;
+  margin: 5px;
+  margin-bottom: 10px;
+}
+
+.tile-header {
+  justify-content: space-between;
+}
+
+
+#characteristics {
+  @include displayCol;
+  align-items: center;
+}
+
+.characteristic {
+  @include displayCol;
+  width: 95%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.char-name {
+  margin-bottom: 10px;
+}
+
+.char-bar {
+  width: 100%;
+  height: .7em;
+  background: linear-gradient(90deg,
+    transparent .5%,
+    $bar-gray .5%,
+    $bar-gray 19.5%,
+    transparent 19.5%,
+    transparent 20.5%,
+    $bar-gray 20.5%,
+    $bar-gray 39.5%,
+    transparent 39.5%,
+    transparent 40.5%,
+    $bar-gray 40.5%,
+    $bar-gray 59.5%,
+    transparent 59.5%,
+    transparent 60.5%,
+    $bar-gray 60.5%,
+    $bar-gray 79.5%,
+    transparent 79.5%,
+    transparent 80.5%,
+    $bar-gray 80.5%,
+    $bar-gray 99.5%,
+    transparent 99.5%
+    );
+}
+
+.char-marker {
+  position: relative;
+  left: var(--marker-position);
+  top: -1.3em;
+}
+
+.char-meaning {
+  @include displayRow;
+  justify-content: space-between;
+}
+
+#reviews-header-sort {
+  background: transparent;
+}
