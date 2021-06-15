@@ -1,7 +1,7 @@
 import React from 'react'
-// import circleCheck from '../../assets/icons/circleCheck.png'
+import circleCheck from '../../assets/icons/circleCheck.png'
 
-const ProductStyles = ({ productStyles, changeSelectedStyle, currentStyle, changeCheckMark, checkMark }) => (
+const ProductStyles = ({ productStyles, changeSelectedStyle, currentStyle, changeCheckMark, checkMark, currentSelectedStyle }) => (
   !currentStyle
     ? <div className='product_styles'>PLEASE WAIT</div>
     : <div className='product_styles'>
@@ -15,13 +15,13 @@ const ProductStyles = ({ productStyles, changeSelectedStyle, currentStyle, chang
         </div>
         <section className='styles_container'>
           {productStyles.results.map((style, index) => (
-              <div key={index}>
+              <div key={index} className='styles_checkMark'>
                 <img
                 src={style.photos[0].thumbnail_url}
                 className='select_styles'
                 onClick={() => { changeSelectedStyle(index); changeCheckMark() }}
                 />
-                {/* {checkMark ? <img src={ circleCheck } className='checkmark_select_styles'/> : <div></div>} */}
+                {currentSelectedStyle === index ? <img src={ circleCheck } className='checkmark_select_styles'/> : <span className='checkmark_select_styles'></span>}
               </div>))}
           </section>
       </div>

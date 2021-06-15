@@ -236,6 +236,7 @@ $displayFlex: flex;
   cursor: pointer;
   flex-wrap: wrap;
   margin-top: 15px;
+  position: relative;
 }
 
 .select_styles {
@@ -246,6 +247,17 @@ $displayFlex: flex;
   height: 100px;
   flex: 1 1 20%;
   margin-top: 10px;
+}
+
+.styles_checkMark {
+  display: $displayFlex;
+  position: relative;
+}
+
+.checkmark_select_styles {
+  position: absolute;
+  width: 30px;
+  height: 30px;
 }
 
 .selection {

@@ -138,7 +138,6 @@ class Overview extends React.Component {
                   currentStyle={ productStyles.results?.[currentSelectedStyle] }
                   checkMark={ checkMark }
                   changeCheckMark={ this.changeCheckMark }
-                  // currentSelectedStyle={ currentSelectedStyle }
                   />
                 </section>
                 <section id='add_to_cart'>
