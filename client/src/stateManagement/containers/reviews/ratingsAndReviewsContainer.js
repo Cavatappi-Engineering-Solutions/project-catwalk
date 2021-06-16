@@ -4,7 +4,7 @@ import { getProductReviews, updateProductReviews } from '../../actions/reviewsAc
 import { getProductRatings, getProductRecommended, getProductCharacteristics } from '../../actions/ratingsActions.js'
 
 const mapState = (state) => ({
-  product_id: 11001,
+  product_id: state.product.id,
   sort: state.reviews.sort
 })
 
