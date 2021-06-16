@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import RatingsAndReviews from '../../../components/reviews/ratingsAndReviews.jsx'
-import { getProductReviews, updateProductReviews } from '../../actions/reviewsActions.js'
+import { getProductReviews } from '../../actions/reviewsActions.js'
 import { getProductRatings, getProductRecommended, getProductCharacteristics } from '../../actions/ratingsActions.js'
 
 const mapState = (state) => ({
