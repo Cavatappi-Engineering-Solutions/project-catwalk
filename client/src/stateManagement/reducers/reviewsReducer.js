@@ -16,6 +16,15 @@ const reviewsReducer = (reviews = initialState, action) => {
       newState.sort = action.payload
       return newState
     }
+    case 'INCREMENT_HELPFUL': {
+      const newState = Object.assign({}, reviews)
+      newState.reviews.forEach((review) => {
+        if (Number(review.review_id) === Number(action.payload)) {
+          review.helpfulness += 1
+        }
+      })
+      return newState
+    }
     default:
       return reviews
   }
