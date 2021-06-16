@@ -5,6 +5,7 @@ import Ratings from './ratings.jsx'
 import Reviews from './reviews.jsx'
 
 const RatingsAndReviews = ({ product_id, sort, getProductReviews, getProductRatings, getProductRecommended, getProductCharacteristics }) => {
+  product_id = product_id || 0
   const reviewConfig = {
     method: 'GET',
     url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews/',
