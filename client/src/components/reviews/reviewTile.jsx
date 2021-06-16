@@ -2,7 +2,7 @@ import React from 'react'
 import StarRating from './starRating.jsx'
 import Helpful from './helpful.jsx'
 
-const Review = ({ data }) => (
+const Review = ({ data, markHelpful }) => (
   <div className="review-tile">
     <div className="tile-header">
       <StarRating ratings={{ [data.rating]: '1' }} total={1} />
@@ -12,7 +12,11 @@ const Review = ({ data }) => (
     <p className="tile-body">{data.body}</p>
     <p className="tile-recommend">{data.recommend}</p>
     <p className="tile-response">{data.response}</p>
-    <Helpful helpfulness={data.helpfulness} />
+    <Helpful
+      helpfulness={data.helpfulness}
+      id={data.review_id}
+      markHelpful={markHelpful}
+    />
   </div>
 )
 
