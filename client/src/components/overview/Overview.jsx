@@ -30,6 +30,7 @@ class Overview extends React.Component {
     this.previousStyle = this.previousStyle.bind(this)
     this.nextStyle = this.nextStyle.bind(this)
     this.changeCheckMark = this.changeCheckMark.bind(this)
+    this.addToCartClick = this.addToCartClick.bind(this)
   }
 
   componentDidMount () {
@@ -88,6 +89,10 @@ class Overview extends React.Component {
 
   changeCheckMark () {
     this.setState({ checkMark: !this.state.checkMark })
+  }
+
+  addToCartClick () {
+    window.alert('Items Has Been Added To Your Cart')
   }
 
   previousStyle () {
@@ -149,6 +154,7 @@ class Overview extends React.Component {
                   currentStyle={ productStyles.results?.[currentSelectedStyle] }
                   icon={ icon }
                   changeIcon={ this.changeIcon }
+                  addToCartClick={ this.addToCartClick }
                   />
                 </section>
                 <section>
