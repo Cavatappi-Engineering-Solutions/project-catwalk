@@ -1,5 +1,6 @@
 import React from 'react'
 import StarRating from '../reviews/starRating.jsx'
+import { Link } from 'react-scroll'
 
 const Product = ({ product, ratings, total }) => (
   <div>
@@ -8,7 +9,14 @@ const Product = ({ product, ratings, total }) => (
       <div className='container-row'>
         <StarRating ratings={ ratings } total={ total }/>
       <section className='read_all_reviews'>
-        <a href="#">Read all Reviews</a>
+        <Link
+          to='ratings-reviews'
+          activeClass='active'
+          spy={true}
+          smooth={true}
+          className='read_all_reviews_link'>
+            {`Read all ${total} Reviews`}
+        </Link>
       </section>
       </div>
     </section>
