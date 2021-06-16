@@ -15,31 +15,31 @@ const DefaultView = ({ currentStylePhotos, changeView, changeMainPhoto, previous
     : {}
   return (
     !currentStylePhotos
-      ? <div className='default_view'>PLEASE WAIT</div>
-      : <div className='default_view'>
-          <section className='default_view_photos'>
-            <section className='expand_view_button_wrap'>
-              <button onClick={() => { changeView() }} className='expand_view_button'><img src={Enlarge}/></button>
-            </section>
-            <section className='left_right_arrow_wrap'>
+      ? <section className='default_view'>PLEASE WAIT</section>
+      : <section className='default_view'>
+          <div className='default_view_photos'>
+            <div className='expand_view_button_wrap'>
+              <button onClick={() => { changeView() }} className='expand_view_button' aria-label="search"><img src={Enlarge} className='expand_enlarge_button' alt='Default Enlarge Icon'/></button>
+            </div>
+            <div className='left_right_arrow_wrap'>
               <FaArrowAltCircleLeft className='left_arrow' onClick={() => { previousStyle() }}/>
               <FaArrowAltCircleRight className='right_arrow' onClick={() => { nextStyle() }}/>
-            </section>
+            </div>
               {matchingProductStyle.url !== null
                 ? <div>
-                    <img src={`${matchingProductStyle.url}`} className="current_display_photo"/>
+                    <img src={`${matchingProductStyle.url}`} className="current_display_photo" alt='Default Current Product Image'/>
                   </div>
                 : <div>
-                    <img src={Unavailable} className="current_display_photo"/>
+                    <img src={Unavailable} className="current_display_photo" alt='Unavailable Icon'/>
                   </div>}
-          </section>
-          <section className='default_product_thumbnail_url_photos'>
+          </div>
+          <div className='default_product_thumbnail_url_photos'>
             {currentStylePhotos.map((photo, index) => (
               <div key={index}>
-                <img src={`${photo.thumbnail_url}`} onClick={() => { changeMainPhoto(index) }} className='default_product_thumbnail_url'/>
+                <img src={`${photo.thumbnail_url}`} onClick={() => { changeMainPhoto(index) }} className='default_product_thumbnail_url' alt='Default Product Styles'/>
               </div>))}
-          </section>
-      </div>
+          </div>
+      </section>
   )
 }
 
