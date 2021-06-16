@@ -33,9 +33,9 @@ class Overview extends React.Component {
   }
 
   componentDidMount () {
-    const { retrieveProducts, retrieveStyles } = this.props
-    retrieveProducts()
-    retrieveStyles()
+    const { retrieveProducts, retrieveStyles, id } = this.props
+    retrieveProducts(id)
+    retrieveStyles(id)
   }
 
   imageGallery () {
@@ -126,7 +126,7 @@ class Overview extends React.Component {
                 <section id='product_info'>
                   <Product
                   product={ product }
-                  ratings={ ratings }
+                  ratings={ ratings.ratings }
                   total={ ratings.total }
                   />
                 </section>
