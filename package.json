@@ -7,8 +7,10 @@
     "test": "jest --coverage",
     "build": "webpack --mode=production",
     "build:dev": "webpack -w",
-    "start:dev": "nodemon server/index.js",
-    "sass": "sass --watch client/src/stylesheets/main.scss client/public/styles.css"
+    "start": "node server",
+    "start:dev": "nodemon server",
+    "sass": "sass client/src/stylesheets/main.scss client/public/styles.css",
+    "sass:dev": "sass --watch client/src/stylesheets/main.scss client/public/styles.css"
   },
   "repository": {
     "type": "git",
