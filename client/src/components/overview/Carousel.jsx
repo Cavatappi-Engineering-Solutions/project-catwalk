@@ -16,7 +16,7 @@ const Carousel = ({ currentStylePhotos, previousStyle, nextStyle, length, change
     !currentStylePhotos
       ? <section className='carousel'>PLEASE WAIT</section>
       : <section className='carousel'>
-          <button onClick={() => { changeView() }} className='carousel_expand_view_button' aria-label="search" alt='Carousel Enlarge Icon'>
+          <button onClick={() => { changeView() }} className='carousel_expand_view_button' aria-label="enlarge" alt='Carousel Enlarge Icon'>
             <img src={Enlarge} className='carousel_enlarge_button'/>
           </button>
           <div className='left_right_arrow_wrap'>
@@ -33,7 +33,7 @@ const Carousel = ({ currentStylePhotos, previousStyle, nextStyle, length, change
           <div className='carousel_product_thumbnail_url_photos'>
             {currentStylePhotos.map((photo, index) => (
               <div key={index}>
-                <img src={`${photo.thumbnail_url}`} onClick={() => { changeMainPhoto(index) }} className='carousel_product_thumbnail_url' alt='Carousel Product Styles'/>
+                <img src={`${photo.thumbnail_url}`} onClick={() => { changeMainPhoto(index) }} className='carousel_product_thumbnail_url' alt='Thumbnail Of Alternate Product Style'/>
               </div>))}
           </div>
       </section>

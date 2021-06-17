@@ -29,12 +29,12 @@ const AddToCart = ({ changeSKU, quantity, currentStyle, icon, changeIcon, addToC
               ? <option>OUT OF STOCK</option>
               : <option key={index}>{inventory}</option>))}
         </select>
-        <button className='cart' aria-label="search" onClick={() => addToCartClick()}>Add To Cart</button>
+        <button className='cart' aria-label="add to cart" onClick={() => addToCartClick()}>Add To Cart</button>
         {icon
-          ? <button onClick={() => changeIcon()} className='heart_button' aria-label="search">
+          ? <button onClick={() => changeIcon()} className='heart_button' aria-label="heart">
               <img src={ Heart } className='heart_icon' alt='Heart Icon'/>
             </button>
-          : <button onClick={() => changeIcon()} className='star_button' aria-label="search">
+          : <button onClick={() => changeIcon()} className='star_button' aria-label="star">
               <img src={ Star } className='star_icon' alt='Star Icon'/>
             </button>}
       </section>
