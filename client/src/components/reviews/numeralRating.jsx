@@ -8,7 +8,7 @@ const NumeralRating = ({ ratings, total }) => {
   const weightedAvg = sum / total
   const roundedRating = Math.round((weightedAvg + Number.EPSILON) * 10) / 10
 
-  return <span id="numeral-rating">{roundedRating ? roundedRating.toString() : ''}</span>
+  return <span id="numeral-rating">{roundedRating ? roundedRating.toString() : '-'}</span>
 }
 
 export default NumeralRating

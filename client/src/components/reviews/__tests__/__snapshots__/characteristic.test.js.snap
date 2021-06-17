@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="characteristic"
+>
+  <span
+    className="char-name"
+  >
+    test
+  </span>
+  <div>
+    <div
+      className="char-bar"
+    />
+    <div
+      className="char-marker"
+      style={
+        Object {
+          "--marker-position": "-3%",
+        }
+      }
+    >
+      ▼
+    </div>
+  </div>
+  <div
+    className="char-meaning"
+  >
+    <span
+      className="char-meaning-low"
+    >
+      low
+    </span>
+    <span
+      className="char-meaning-high"
+    >
+      high
+    </span>
+  </div>
+</div>
+`;
