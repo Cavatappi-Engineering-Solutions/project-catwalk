@@ -14,7 +14,7 @@ const Product = ({ product, ratings, total }) => (
             activeClass='active'
             spy={true}
             smooth={true}>
-              {`Read all ${total} Reviews`}
+              {`Read all [${total}] Reviews`}
           </Link>
         </div>
       </div>
