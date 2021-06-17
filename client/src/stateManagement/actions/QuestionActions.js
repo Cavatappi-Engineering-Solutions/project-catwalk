@@ -26,7 +26,7 @@ export const retrieveQuestions = (id) => {
     const options = {
       method: 'GET',
       url: `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/questions/?product_id=${id}`,
-      headers: { 'Authorization': API_KEY }
+      headers: { Authorization: API_KEY }
     }
     return axios(options)
       .then(({ data }) => {
@@ -43,7 +43,7 @@ export const markQHelpful = (id) => {
     const options = {
       method: 'PUT',
       url: `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/questions/${id}/helpful`,
-      headers: { 'Authorization': API_KEY }
+      headers: { Authorization: API_KEY }
     }
     return axios(options)
       .then(({ data }) => {
@@ -60,7 +60,7 @@ export const markAHelpful = (id) => {
     const options = {
       method: 'PUT',
       url: `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/answers/${id}/helpful`,
-      headers: { 'Authorization': API_KEY }
+      headers: { Authorization: API_KEY }
     }
     return axios(options)
       .then(({ data }) => {
