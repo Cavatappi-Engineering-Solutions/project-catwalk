@@ -1,17 +1,22 @@
 import React from 'react'
 import StarRating from './starRating.jsx'
+import Helpful from './helpful.jsx'
 
-const Review = ({ data }) => (
-  <div className="review-tile container-col">
-    <div className="tile-header container-row">
+const Review = ({ data, markHelpful }) => (
+  <div className="review-tile">
+    <div className="tile-header">
       <StarRating ratings={{ [data.rating]: '1' }} total={1} />
-      <span>{`${data.reviewer_name}, ${data.date}`}</span>
+      <span className="tile-date">{`${data.reviewer_name}, ${data.date}`}</span>
     </div>
-    <div className="tile-summary">{data.summary}</div>
-    <div className="tile-body">{data.body}</div>
-    <div className="tile-recommend">{data.recommend}</div>
-    <div className="tile-response">{data.response}</div>
-    <div className="tile-helpful"></div>
+    <p className="tile-summary">{data.summary}</p>
+    <p className="tile-body">{data.body}</p>
+    <p className="tile-recommend">{data.recommend}</p>
+    <p className="tile-response">{data.response}</p>
+    <Helpful
+      helpfulness={data.helpfulness}
+      id={data.review_id}
+      markHelpful={markHelpful}
+    />
   </div>
 )
 
