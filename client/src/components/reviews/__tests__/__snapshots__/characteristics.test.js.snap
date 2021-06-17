@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  id="characteristics"
+>
+  <div
+    className="characteristic"
+  >
+    <span
+      className="char-name"
+    >
+      Size
+    </span>
+    <div>
+      <div
+        className="char-bar"
+      />
+      <div
+        className="char-marker"
+        style={
+          Object {
+            "--marker-position": "NaN%",
+          }
+        }
+      >
+        ▼
+      </div>
+    </div>
+    <div
+      className="char-meaning"
+    >
+      <span
+        className="char-meaning-low"
+      />
+      <span
+        className="char-meaning-high"
+      />
+    </div>
+  </div>
+  <div
+    className="characteristic"
+  >
+    <span
+      className="char-name"
+    >
+      Width
+    </span>
+    <div>
+      <div
+        className="char-bar"
+      />
+      <div
+        className="char-marker"
+        style={
+          Object {
+            "--marker-position": "NaN%",
+          }
+        }
+      >
+        ▼
+      </div>
+    </div>
+    <div
+      className="char-meaning"
+    >
+      <span
+        className="char-meaning-low"
+      />
+      <span
+        className="char-meaning-high"
+      />
+    </div>
+  </div>
+  <div
+    className="characteristic"
+  >
+    <span
+      className="char-name"
+    >
+      Comfort
+    </span>
+    <div>
+      <div
+        className="char-bar"
+      />
+      <div
+        className="char-marker"
+        style={
+          Object {
+            "--marker-position": "NaN%",
+          }
+        }
+      >
+        ▼
+      </div>
+    </div>
+    <div
+      className="char-meaning"
+    >
+      <span
+        className="char-meaning-low"
+      />
+      <span
+        className="char-meaning-high"
+      />
+    </div>
+  </div>
+</div>
+`;
