@@ -1,26 +1,42 @@
-import React from 'react';
-import helpfulTag from './helpfulness.jsx';
-import report from './report.jsx'
+import React from 'react'
 
-// const list = <div>{storage.map((answer) => <div>{answer.answerer_name}&nbsp;{answer.body}&nbsp;{answer.date}</div>)}</div>
+class Answer extends React.Component {
+  constructor (props) {
+    super(props)
 
-const Answer = (props) => {
-    const storage = []
-    const answers = props.answers
-
-    for (var key in answers) {
-        storage.push(answers[key])
+    this.state = {
+      reported: false
     }
 
-    const list = <div>{storage.map((answer) => <div key={answer.id}>{answer.answerer_name}&nbsp;{answer.body}&nbsp;{answer.date}&nbsp;Helpful? Yes({helpfulTag(answer.helpfulness)})</div>)}</div>
+    this.handleReportClick = this.handleReportClick.bind(this)
+  }
+
+  handleReportClick () {
+    this.setState({
+      reported: true
+    })
+  }
+
+  render () {
+    const storage = []
+    const answers = this.props.answers
+
+    for (const key in answers) {
+      storage.push(answers[key])
+    }
+
+    const array = storage.map((answer) => <div className="answer"key={answer.id}>A: {answer.body} <br></br> <div className="underbar"> by {answer.answerer_name}, {answer.date.slice(0, 10)} &#124; Helpful? <span className="helpful" onClick={() => this.props.markAHelpful(answer.id)}> Yes({answer.helpfulness})</span> &#124; <span className="report" onClick={this.handleReportClick}>{this.state.reported ? 'Reported' : 'Report'}</span></div></div>)
+
     const empty = <div>There are no answers!</div>
 
-    return (
-        <div>
-            {Object.keys(answers).length === 0 ? empty : list}
-        </div>
-    )
+    const first = <div className="firstAnswer">{array[0]}</div>
 
+    return (
+         <div>
+            {Object.keys(answers).length === 0 ? empty : first}
+         </div>
+    )
+  }
 }
 
-export default Answer;
+export default Answer

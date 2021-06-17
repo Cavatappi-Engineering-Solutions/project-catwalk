@@ -1,26 +1,24 @@
-import React from 'react';
-import axios from 'axios';
-import QuestionsList from './questionsList.jsx';
+import React from 'react'
+import QuestionsList from './questionsList.jsx'
+import moreAnswersButton from './moreAnswersButton.jsx'
+import addQuestionsButton from './addQuestionsButton.jsx'
+import QuestionSearchBar from './questionSearchBar.jsx'
 
+const QuestionsAndAnswers = ({ questions, getQuestions, markQHelpful, markAHelpful }) => {
+  const pathname = window.location.pathname.slice(1)
 
-class QuestionsAndAnswers extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+  if (questions.product_id !== pathname) {
+    getQuestions(pathname)
+  }
 
-    componentDidMount () {
-        this.props.getQuestions()
-    }
-
-    render () {
-    return (
-        <div className="questionsAndAnswers">
-            <h2>Questions and Answers</h2>
-            <QuestionsList questions={this.props.questions}/>
-        </div>
-    )
-    }
+  return (
+    <div className="questionsAndAnswers">
+        <h2 className="headerQAndA">Questions and Answers</h2>
+        <QuestionSearchBar/>
+        <QuestionsList questions={questions.results} markQHelpful={markQHelpful} markAHelpful={markAHelpful}/>
+        <div className="buttonsDiv">{moreAnswersButton} {addQuestionsButton}</div>
+    </div>
+  )
 }
 
-
-export default QuestionsAndAnswers;
+export default QuestionsAndAnswers
