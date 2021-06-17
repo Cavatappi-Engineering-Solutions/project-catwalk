@@ -12,8 +12,8 @@ const AddToCart = ({ changeSKU, quantity, currentStyle, icon, changeIcon, addToC
   }
   return (
     !currentStyle
-      ? <div className='selection'>PLEASE WAIT</div>
-      : <div className='selection'>
+      ? <section className='selection'>PLEASE WAIT</section>
+      : <section className='selection'>
         <select onChange={(e) => { changeSKU(e.target.value) }} className='size_dropdown'>
           <option hidden>SELECT SIZE</option>
           {Object.values(currentStyle.skus).map(({ quantity, size }, index) => (
@@ -29,13 +29,15 @@ const AddToCart = ({ changeSKU, quantity, currentStyle, icon, changeIcon, addToC
               ? <option>OUT OF STOCK</option>
               : <option key={index}>{inventory}</option>))}
         </select>
-        <section className='cart_icon'>
-          <button className='cart' onClick={() => addToCartClick()}>Add To Cart</button>
-        </section>
+        <button className='cart' aria-label="add to cart" onClick={() => addToCartClick()}>Add To Cart</button>
         {icon
-          ? <button onClick={() => changeIcon()} className='heart_icon'><img src={ Heart }/></button>
-          : <button onClick={() => changeIcon()} className='star_icon'><img src={ Star }/></button>}
-      </div>
+          ? <button onClick={() => changeIcon()} className='heart_button' aria-label="heart">
+              <img src={ Heart } className='heart_icon' alt='Heart Icon'/>
+            </button>
+          : <button onClick={() => changeIcon()} className='star_button' aria-label="star">
+              <img src={ Star } className='star_icon' alt='Star Icon'/>
+            </button>}
+      </section>
   )
 }
 

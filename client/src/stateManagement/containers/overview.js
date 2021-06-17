@@ -3,7 +3,7 @@ import { retrieveProduct } from '../actions/product'
 import { retrieveProductStyle } from '../actions/selectStyles'
 import Overview from '../../components/overview/Overview.jsx'
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
   product: state.product,
   productStyles: state.productStyles,
   ratings: state.ratings

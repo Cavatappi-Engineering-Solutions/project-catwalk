@@ -4,12 +4,17 @@ import Twitter from '../../assets/icons/twitter.png'
 import Pinterest from '../../assets/icons/pinterest.png'
 
 const Share = () => (
-  <div className='share_social_media'>
-      <a href='#' className='share'>Share</a>
-      <a href='#' className='facebook'><img src={ Facebook }/></a>
-      <a href='#' className='twitter'><img src={ Twitter }/></a>
-      <a href='#' className='pinterest'><img src={ Pinterest }/></a>
-  </div>
+  <section className='share_social_media'>
+    <a className='facebook'>
+      <img src={ Facebook } className='facebook_icon' alt='Facebook Icon'/>
+    </a>
+    <a className='twitter'>
+      <img src={ Twitter } className='twitter_icon' alt='Twitter Icon'/>
+    </a>
+    <a className='pinterest'>
+      <img src={ Pinterest } className='pinterest_icon' alt='Pinterest Icon'/>
+    </a>
+  </section>
 )
 
 export default Share

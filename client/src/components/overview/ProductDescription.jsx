@@ -1,10 +1,10 @@
 import React from 'react'
 
 const ProductDescription = ({ product }) => (
-  <div className='product_slogan_description'>
-    <h3 className='product_slogan'>{product.slogan}</h3>
+  <section className='product_slogan_description'>
+    <p className='product_slogan'>{product.slogan}</p>
     <p className='product_description'>{product.description}</p>
-  </div>
+  </section>
 )
 
 export default ProductDescription
