@@ -1,8 +1,5 @@
-import React from 'react';
+import React from 'react'
 
-const addAnswer = () => (
-    <span className="addAnswer">Add Answer</span>
-)
+const addAnswer = <span className="addAnswer">Add Answer</span>
 
-
-export default addAnswer;
+export default addAnswer
