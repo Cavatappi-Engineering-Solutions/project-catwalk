@@ -34,7 +34,6 @@ class Overview extends React.Component {
   }
 
   componentDidMount () {
-    console.log(this.props)
     const { retrieveProducts, retrieveStyles, id } = this.props
     retrieveProducts(id)
     retrieveStyles(id)
