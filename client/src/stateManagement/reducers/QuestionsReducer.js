@@ -10,5 +10,5 @@ const questionsReducer = (questions = {}, action) => {
       return questions
   }
 }
-  
-export default questionsReducer;
+
+export default questionsReducer
