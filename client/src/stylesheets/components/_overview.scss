@@ -1,29 +1,27 @@
-//variables
 $displayFlex: flex;
-//=============================================================================
-//overview
+
+//OVERVIEW
 #overview {
   display: $displayFlex;
   justify-content: center;
   align-items: flex-start;
-  max-height: 100%;
   width: 100%;
+  height: 100%;
 
 }
 
-//=============================================================================
-//combined LEFT AND RIGHT SIDE
+//============================================================================
+//COMBINED (LEFT AND RIGHT SIDE)
 #combined_view_product_information {
-  display: $displayFlex;
-  position: relative;
-  flex-direction: row;
+  @include displayRow;
   justify-content: center;
+  position: relative;
   width: 100%;
   height: 100%;
 }
 
-//=============================================================================
-//view LEFT SIDE
+//============================================================================
+//VIEW (LEFT SIDE)
 #view {
   display: $displayFlex;
   justify-content: center;
@@ -33,24 +31,27 @@ $displayFlex: flex;
 }
 
 .default_view {
-  display: $displayFlex;
-  flex-direction: column;
+  @include displayCol;
   position: relative;
 }
 
 .carousel {
+  @include displayCol;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  display: $displayFlex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   z-index: 10000;
+}
+
+.carousel_enlarge_button, .expand_enlarge_button { 
+  width: 40px;
+  height: 40px;
 }
 
 .carousel_current_display_photo {
@@ -66,26 +67,23 @@ $displayFlex: flex;
 }
 
 .carousel_product_thumbnail_url_photos{
-  display: $displayFlex;
-  margin-left: 1200px;
-  flex-direction: column;
+  @include displayCol;
   position: absolute;
-  flex-wrap: wrap;
   cursor: pointer;
+  margin-left: 1200px;
 }
 
 .carousel_product_thumbnail_url {
   display: $displayFlex;
-  margin: 10px;
   width: 80px;
   height: 100%;
-  border: 2px solid;
   margin-left: 100px;
+  border: 2px solid;
+  margin: 3px;
 }
 
 .default_view_photos {
-  display: $displayFlex;
-  flex-direction: column;
+  @include displayCol;
   position: relative;
   margin-left: 200px;
 }
@@ -93,34 +91,31 @@ $displayFlex: flex;
 .current_display_photo {
   display: $displayFlex;
   justify-content: center;
-  max-height: 850px;
-  max-width: 600px;
-  height: 100%;
-  z-index: -1;
+  width: 600px;
+  height: 900px;
   cursor: -moz-zoom-in;
   cursor: -webkit-zoom-in;
   cursor: zoom-in;
+  z-index: -1;
   border: 2px solid;
 }
 
 .current_display_photo:hover {
-  transform: scale(1.25);
+  transform: scale(1.10);
 }
 
 .default_product_thumbnail_url_photos {
-  display: $displayFlex;
-  flex-direction: column;
+  @include displayCol;
   position: absolute;
   cursor: pointer;
 }
 
 .default_product_thumbnail_url {
-  margin-top: 20px;
-  margin-left: 20px;
   width: 60px;
   height: 100%;
-  border: 2px solid;
+  margin-top: 20px;
   margin-left: 100px;
+  border: 2px solid;
 }
 
 .expand_view_button_wrap {
@@ -133,29 +128,32 @@ $displayFlex: flex;
 .carousel_expand_view_button {
   display: $displayFlex;
   align-self: flex-end;
-  margin-right: 100px;
+  position: absolute;
   cursor: pointer;
-  padding: 2px;
-  background-color: white;
+  width: 47px;
+  height: 47px;
   opacity: 0.7;
+  padding: 2px;
+  margin-right: 100px;
+  margin-bottom: 700px;
 }
 
 .expand_view_button {
   cursor: pointer;
+  width: 50px;
+  height: 47px;
+  opacity: 0.7;
   padding: 2px;
   margin-top: 20px;
   margin-right: 20px;
-  background-color: white;
-  opacity: 0.7;
 }
 
 .left_right_arrow_wrap {
-  display: $displayFlex;
-  flex-direction: row;
+  @include displayRow;
   justify-content: space-between;
   position: absolute;
-  top: 50%;
   width: 100%;
+  top: 50%;
 }
 
 .left_arrow {
@@ -170,12 +168,11 @@ $displayFlex: flex;
   font-size: 3em;
 }
 
-//=============================================================================
-//product_information RIGHT SIDE
+//============================================================================
+//PRODUCT INFORMATION (RIGHT SIDE)
 #product_information {
-  display: $displayFlex;
+  @include displayCol;
   position: relative;
-  flex-direction: column;
   width: 150%;
   height: 100%;
   margin: 15px;
@@ -203,20 +200,20 @@ $displayFlex: flex;
 }
 
 .product_category {
+  font-weight: bold;
   margin-top: 20px;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 #product_info {
-  position: relative;
   display: $displayFlex;
+  position: relative;
   font-size: 30px;
   width: 550px;
 }
 
 .product_styles {
-  display: $displayFlex;
-  flex-direction: column;
+  @include displayCol;
   position: relative;
 }
 
@@ -234,19 +231,18 @@ $displayFlex: flex;
 }
 
 .style_name {
+  font-weight: bold;
   font-size: 28px;
   margin-top: 35px;
-  font-weight: bold;
 }
 
 .styles_container {
-  display: $displayFlex;
+  @include displayRow;
   justify-content: space-evenly;
-  flex-direction: row;
+  position: relative;
   cursor: pointer;
   flex-wrap: wrap;
   margin-top: 15px;
-  position: relative;
 }
 
 .select_styles {
@@ -275,7 +271,6 @@ $displayFlex: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 50px;
-  flex-wrap: wrap;
 }
 
 .size_dropdown, .quantity_dropdown, .cart {
@@ -283,41 +278,37 @@ $displayFlex: flex;
   font-size: 20px;
 }
 
-.size_dropdown, .quantity_dropdown, .cart, .heart_icon, .star_icon{
+.size_dropdown, .quantity_dropdown, .cart, .heart_button, .star_button {
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
   cursor: pointer;
   background-color: white;
 }
 
+.heart_icon, .star_icon {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+}
+
 .share_social_media {
-  display: $displayFlex;
-  margin-top: 40px;
+  @include displayRow;
   justify-content: center;
-  flex-direction: row;
+  margin-top: 40px;
 }
 
-.share, .facebook, .twitter, .pinterest {
+.facebook, .twitter, .pinterest {
   margin: 10px;
+  cursor: pointer;
 }
 
-.share {
-  display: $displayFlex;
-  align-items: center;
-  background-color: lightgreen;
-  border-radius: 50%;
-}
-
-
-
-//=============================================================================
-//combined_top_bottom TOP & BOTTOM
+//============================================================================
+//COMBINED (TOP & BOTTOM)
 #combined_top_bottom {
-  display: $displayFlex;
-  flex-direction: column;
+  @include displayCol;
 }
 
-//=============================================================================
-//product_description BOTTOM SIDE
+//============================================================================
+//PRODUCT SLOGAN/DESCRIPTION (BOTTOM SIDE)
 #product_description_feature {
   display: $displayFlex;
   justify-content: center;
@@ -338,25 +329,35 @@ $displayFlex: flex;
 }
 
 .product_slogan_description {
-  font-size: 20px;
+  font-size: 25px;
   width: 800px;
   border-right: 1px dashed #000;
 }
 
+.product_slogan {
+  font-weight: bold;
+  font-size: 25px;
+}
+
 .features {
-  display: $displayFlex;
-  flex-direction: column;
+  @include displayCol;
   justify-content: space-evenly;
 }
 
 .checkmark {
   margin-right: 10px;
   opacity: 0.6;
+  width: 20px;
+  height: 20px;
 }
 
 .all_features {
   display: $displayFlex;
   margin: 5px;
+  font-size: 17px;
 }
 
-//=====================================================================
+.facebook_icon, .twitter_icon, .pinterest_icon {
+  width: 40px;
+  height: 40px;
+}

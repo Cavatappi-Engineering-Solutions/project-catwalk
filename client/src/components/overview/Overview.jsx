@@ -119,23 +119,23 @@ class Overview extends React.Component {
     const { currentSelectedStyle, quantity, icon, checkMark } = this.state
     const { product, productStyles, ratings } = this.props
     return (
-      <div>
-        <h1 id='logo'><img src={ Cavatappi }/>CAVATAPPI</h1>
-        <section id='overview'>
-          <section id='combined_top_bottom'>
-            <section id='combined_view_product_information'>
-              <section id='view'>
+      <main>
+        <h1 id='logo'><img src={ Cavatappi } className='cavatappi_logo' alt='Cavatappi Logo'/>CAVATAPPI</h1>
+        <div id='overview'>
+          <div id='combined_top_bottom'>
+            <div id='combined_view_product_information'>
+              <div id='view'>
                 { this.imageGallery() }
-              </section>
-              <section id='product_information'>
-                <section id='product_info'>
+              </div>
+              <div id='product_information'>
+                <div id='product_info'>
                   <Product
                   product={ product }
                   ratings={ ratings.ratings }
                   total={ ratings.total }
                   />
-                </section>
-                <section id='product_styles'>
+                </div>
+                <div id='product_styles'>
                   <SelectStyles
                   productStyles={ productStyles }
                   currentSelectedStyle= { currentSelectedStyle }
@@ -144,8 +144,8 @@ class Overview extends React.Component {
                   checkMark={ checkMark }
                   changeCheckMark={ this.changeCheckMark }
                   />
-                </section>
-                <section id='add_to_cart'>
+                </div>
+                <div id='add_to_cart'>
                   <AddToCart
                   quantity={ quantity }
                   productStyles={ productStyles }
@@ -156,23 +156,23 @@ class Overview extends React.Component {
                   changeIcon={ this.changeIcon }
                   addToCartClick={ this.addToCartClick }
                   />
-                </section>
-                <section>
+                </div>
+                <div>
                   <Share />
-                </section>
-              </section>
-            </section>
-            <section id='product_description_feature'>
-              <section id='product_description'>
+                </div>
+              </div>
+            </div>
+            <div id='product_description_feature'>
+              <div id='product_description'>
                 <ProductDescription product={ product }/>
-              </section>
-              <section id='product_features'>
+              </div>
+              <div id='product_features'>
                 <Features productFeatures={ product.features }/>
-              </section>
-            </section>
-          </section>
-        </section>
-      </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
     )
   }
 }

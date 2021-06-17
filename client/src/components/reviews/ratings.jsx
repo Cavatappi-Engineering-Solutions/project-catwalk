@@ -7,7 +7,7 @@ import Characteristics from '../../stateManagement/containers/reviews/characteri
 
 const Ratings = (props) => (
   <section id="ratings" className="container">
-    <div className="container-row">
+    <div id="ratings-header">
       <NumeralRating />
       <StarRating />
     </div>

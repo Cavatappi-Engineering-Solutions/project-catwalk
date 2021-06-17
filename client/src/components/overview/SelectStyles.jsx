@@ -3,8 +3,8 @@ import circleCheck from '../../assets/icons/circleCheck.png'
 
 const ProductStyles = ({ productStyles, changeSelectedStyle, currentStyle, changeCheckMark, checkMark, currentSelectedStyle }) => (
   !currentStyle
-    ? <div className='product_styles'>PLEASE WAIT</div>
-    : <div className='product_styles'>
+    ? <section className='product_styles'>PLEASE WAIT</section>
+    : <section className='product_styles'>
         <div className='style_price'>{currentStyle.sale_price
           ? <div>
               <div className='discount_price'>{`Discount Price: $${currentStyle.sale_price}`}</div>
@@ -19,12 +19,15 @@ const ProductStyles = ({ productStyles, changeSelectedStyle, currentStyle, chang
                 <img
                 src={style.photos[0].thumbnail_url}
                 className='select_styles'
+                alt='Selected Styles Available'
                 onClick={() => { changeSelectedStyle(index); changeCheckMark() }}
                 />
-                {currentSelectedStyle === index ? <img src={ circleCheck } className='checkmark_select_styles'/> : <span className='checkmark_select_styles'></span>}
+                {currentSelectedStyle === index
+                  ? <img src={ circleCheck } className='checkmark_select_styles' alt='CheckMark Logo'/>
+                  : <span className='checkmark_select_styles'></span>}
               </div>))}
           </section>
-      </div>
+      </section>
 )
 
 export default ProductStyles
