@@ -1,7 +1,7 @@
 import React from 'react'
 import circleCheck from '../../assets/icons/circleCheck.png'
 
-const ProductStyles = ({ productStyles, changeSelectedStyle, currentStyle, changeCheckMark, checkMark, currentSelectedStyle }) => (
+const ProductStyles = ({ productStyles, changeSelectedStyle, currentStyle, changeCheckMark, currentSelectedStyle }) => (
   !currentStyle
     ? <section className='product_styles'>PLEASE WAIT</section>
     : <section className='product_styles'>
