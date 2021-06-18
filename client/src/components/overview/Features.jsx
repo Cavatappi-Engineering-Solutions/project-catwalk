@@ -5,7 +5,6 @@ const Features = ({ productFeatures }) => (
   !productFeatures
     ? <section className='features'>PLEASE WAIT</section>
     : <section className='features'>
-      {console.log(productFeatures)}
         {productFeatures.map((feature, index) =>
           <div key={index} className='all_features'>
             <img src={ Checkmark } className='checkmark' alt='Features Check Icon'/>{feature.value}

@@ -38,7 +38,9 @@ const DefaultView = ({ currentStylePhotos, changeView, changeMainPhoto, previous
           <div className='default_product_thumbnail_url_photos'>
             {currentStylePhotos.map((photo, index) => (
               <div key={index}>
-                <img src={`${photo.thumbnail_url}`} onClick={() => { changeMainPhoto(index) }} className='default_product_thumbnail_url' alt='Thumbnail Of Alternate Product Style'/>
+                {photo.thumbnail_url !== null
+                  ? <img src={`${photo.thumbnail_url}`} onClick={() => { changeMainPhoto(index) }} className='default_product_thumbnail_url' alt='Thumbnail Of Alternate Product Style'/>
+                  : <img src={Unavailable} className="default_product_thumbnail_url" alt='Unavailable Icon'/>}
               </div>))}
           </div>
       </section>
