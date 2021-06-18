@@ -1,8 +1,99 @@
 .answerBar {
-    margin-left: 2%;
+  margin-left: 2%;
 }
 
 .questionBar {
-    align-content: space-between;
+  justify-content: space-between;
 }
 
+.questionSearch {
+  padding: 10px;
+  border-radius: 0;
+  border: 1px solid black;
+  margin-top: 2%;
+  cursor: pointer;
+}
+
+.questionsAndAnswers {
+  @include displayCol;
+  width: 80%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.question {
+  @include displayCol;
+  margin-bottom: 2%;
+}
+
+.questionsList {
+  margin-top: 2%;
+}
+
+.yes {
+  text-decoration: underline;
+  cursor: pointer;
+}
+  
+.yes:hover {
+  color: purple;
+}
+
+.yesAnswer {
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+}
+  
+.yesAnswer:hover {
+  color: purple;
+}
+
+.addAnswer {
+  text-decoration: underline;
+  cursor: pointer;
+}
+  
+.addAnswer:hover {
+  color: purple;
+}
+
+.report {
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 8px;
+}
+  
+.report:hover {
+  color: purple;
+}
+
+.firstAnswer {
+  margin-top: 1%;
+}
+
+.underbar {
+  font-size: 14px;
+  margin-top: 10px;
+  margin-left: 2px;
+}
+
+.helpfulAnswerNumber {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.helpfulText {
+  margin-left: 1%;
+}
+
+.qText {
+  font-size: 14.5px;
+  font-weight: bold;
+}
+
+.aText {
+  font-size: 14.5px;
+  font-weight: bold;
+}
