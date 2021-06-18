@@ -56,6 +56,10 @@ class Overview extends React.Component {
       nextStyle={ this.nextStyle }
       changeView={ this.changeView }
       changeMainPhoto={ this.changeMainPhoto }
+      start={ start }
+      end={ end }
+      downArrow={ this.downArrow }
+      upArrow={ this.upArrow }
       />
     } else {
       return <DefaultView

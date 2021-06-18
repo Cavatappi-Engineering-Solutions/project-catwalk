@@ -79,7 +79,7 @@ $displayFlex: flex;
   height: 100%;
   margin-left: 100px;
   border: 2px solid;
-  margin: 3px;
+  margin: 10px;
 }
 
 .default_view_photos {
@@ -164,6 +164,20 @@ $displayFlex: flex;
   position: absolute;
   width: 100%;
   top: 50%;
+}
+
+.carousel_up_arrow {
+  cursor: pointer;
+  margin-right: 100px;
+  margin-left: 30px;
+  font-size: 3em;
+}
+
+.carousel_down_arrow {
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  font-size: 3em;
 }
 
 .up_arrow {
