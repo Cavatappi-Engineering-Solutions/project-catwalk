@@ -263,7 +263,7 @@ $displayFlex: flex;
   width: 100px;
   height: 100px;
   flex: 1 1 20%;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .styles_checkMark {
@@ -277,22 +277,34 @@ $displayFlex: flex;
   height: 30px;
 }
 
-.selection {
+.dropdown_section, .add_to_cart_section {
   display: $displayFlex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 50px;
+  justify-content: space-evenly;
+  margin-top: 30px;
 }
 
 .size_dropdown, .quantity_dropdown, .cart {
-  padding: 12px;
+  padding: 15px;
   font-size: 20px;
+}
+
+.size_dropdown {
+  width: 60%;
+}
+
+.quantity_dropdown {
+  width: 25%;
+}
+
+.cart {
+  width: 75%;
 }
 
 .size_dropdown, .quantity_dropdown, .cart, .heart_button, .star_button {
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
   cursor: pointer;
   background-color: white;
+  border: 2px solid;
 }
 
 .heart_icon, .star_icon {
