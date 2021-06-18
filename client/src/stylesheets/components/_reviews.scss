@@ -5,13 +5,22 @@
 #ratings-reviews {
   @include displayCol;
   width: 85%;
-  margin-top: 50px;
+  margin-top: calc(40px + 5vh);
   margin-bottom: 50px;
+  align-items: center;
+}
+
+.container-row {
+ @include displayRow;
 }
 
 #ratings-reviews .container-row {
-  justify-content: space-between;
-  width: 100%;
+  justify-content: center;
+  width: 90%;
+}
+
+#ratings-reviews-title {
+  margin-right: 50vw;
 }
 
 /*============================================
@@ -22,20 +31,14 @@
   @include displayCol;
   width: 25%;
   min-width: 275px;
+  max-width: 350px;
+  margin: 40px;
 }
 
 #ratings-header {
   @include displayRow;
   align-items: center;
-
-}
-
-.container-row {
- @include displayRow;
-}
-
-#ratings .star-rating {
-  font-size: 2rem;
+  margin-top: 20px;
 }
 
 #numeral-rating {
@@ -45,6 +48,7 @@
 
 #bar-graph {
   @include displayCol;
+  margin-top: 15px;
 }
 
 .graph-row {
@@ -52,6 +56,7 @@
   align-items: center;
   justify-content: space-around;
   width: 100%;
+  margin-top: 5px;
 }
 
 .num-stars {
@@ -66,6 +71,7 @@
 }
 
 .bar {
+  margin: 2px;
   width: 65%;
   height: .7rem;
   background: linear-gradient(90deg, rgba(4, 136, 4, 0.7) var(--bar-size), $bar-gray var(--bar-size));
@@ -74,12 +80,13 @@
 #characteristics {
   @include displayCol;
   align-items: center;
+  margin-top: 10px;
 }
 
 .characteristic {
   @include displayCol;
   width: 95%;
-  margin-top: 10px;
+  margin-top: 15px;
   margin-bottom: 10px;
 }
 
@@ -133,6 +140,13 @@
  @include displayCol;
   width: 65%;
   min-width: 550px;
+  max-width: 750px;
+  margin: 40px;
+}
+
+#reviews-header {
+  margin-top: 20px;
+  margin-left: 10px
 }
 
 .review-tile {
@@ -148,40 +162,12 @@
   padding: 5px;
 }
 
-.tile-header .star-rating {
-  font-size: 1.5rem;
-}
-
 #reviews-header-sort {
   background: transparent;
 }
 
-.tile-date {
-  font-size: calc(12px + .2vh);
-}
-
-.tile-summary {
-  font-weight: bold;
-  overflow-wrap: normal;
-  word-break: normal;
+.tile-summary, .tile-body, .tile-recommend, .tile-helpful-report, .tile-helpful-report span {
   padding: 5px;
-}
-
-.tile-body {
-  padding: 5px;
-}
-
-.til-recommend {
-  padding: 5px;
-}
-
-.tile-helpful-report {
-  padding: 5px;
-}
-
-.tile-helpful-report span {
-  font-size: 12px;
-  padding-right: 5px;
 }
 
 .tile-yes, .tile-report {

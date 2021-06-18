@@ -38,3 +38,33 @@ span {
 p {
   font-size: calc(12px + .5vh);
 }
+
+#ratings-reviews-title {
+  font-size: calc(25px + .8vh)
+}
+
+#ratings .star-rating {
+  font-size: 2rem;
+}
+
+.tile-header .star-rating {
+  font-size: 1.5rem;
+}
+
+.tile-date {
+  font-size: calc(12px + .2vh);
+}
+
+.tile-summary {
+  font-weight: bold;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.tile-helpful-report span {
+  font-size: 12px;
+}
+
+.char-meaning-low, .char-meaning-high {
+  font-size: 12px;
+}
