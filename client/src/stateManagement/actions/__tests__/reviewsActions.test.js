@@ -1,22 +1,22 @@
 /* eslint-disable no-undef */
-import { getProductRatings, getProductRecommended, getProductCharacteristics } from '../ratingsActions.js'
+import { getProductReviews, changeSort, incrementHelpful } from '../reviewsActions.js'
 
 describe('Each action creator should return a properly formatted object', () => {
-  it('should return an object with a type GET_RATINGS', () => {
-    const result = getProductRatings('values')
-    expect(result.type).toBe('GET_RATINGS')
+  it('should return an object with a type GET_REVIEWS', () => {
+    const result = getProductReviews('values')
+    expect(result.type).toBe('GET_REVIEWS')
     expect(result.payload).toBe('values')
   })
 
-  it('should return an object with a type GET_RECOMMEND', () => {
-    const result = getProductRecommended('values')
-    expect(result.type).toBe('GET_RECOMMEND')
+  it('should return an object with a type CHANGE_SORT', () => {
+    const result = changeSort('values')
+    expect(result.type).toBe('CHANGE_SORT')
     expect(result.payload).toBe('values')
   })
 
-  it('should return an object with a type GET_CHARACTER', () => {
-    const result = getProductCharacteristics('values')
-    expect(result.type).toBe('GET_CHARACTER')
+  it('should return an object with a type INCREMENT_HELPFUL', () => {
+    const result = incrementHelpful('values')
+    expect(result.type).toBe('INCREMENT_HELPFUL')
     expect(result.payload).toBe('values')
   })
 })
