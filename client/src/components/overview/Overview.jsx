@@ -19,7 +19,9 @@ class Overview extends React.Component {
       currentProduct: '',
       currentSelectedStyle: 0,
       length: 0,
-      checkMark: false
+      checkMark: false,
+      start: 0,
+      end: 7
     }
     this.imageGallery = this.imageGallery.bind(this)
     this.changeMainPhoto = this.changeMainPhoto.bind(this)
@@ -31,6 +33,8 @@ class Overview extends React.Component {
     this.nextStyle = this.nextStyle.bind(this)
     this.changeCheckMark = this.changeCheckMark.bind(this)
     this.addToCartClick = this.addToCartClick.bind(this)
+    this.downArrow = this.downArrow.bind(this)
+    this.upArrow = this.upArrow.bind(this)
   }
 
   componentDidMount () {
@@ -40,7 +44,7 @@ class Overview extends React.Component {
   }
 
   imageGallery () {
-    const { view, length, currentSelectedStyle } = this.state
+    const { view, length, currentSelectedStyle, start, end } = this.state
     const { productStyles } = this.props
     if (view) {
       return <Carousel
@@ -63,6 +67,10 @@ class Overview extends React.Component {
       length={ length }
       previousStyle={ this.previousStyle }
       nextStyle={ this.nextStyle }
+      start={ start }
+      end={ end }
+      downArrow={ this.downArrow }
+      upArrow={ this.upArrow }
       />
     }
   }
@@ -89,6 +97,14 @@ class Overview extends React.Component {
 
   changeCheckMark () {
     this.setState({ checkMark: !this.state.checkMark })
+  }
+
+  downArrow () {
+    this.setState({ start: this.state.start + 1, end: this.state.end + 1 })
+  }
+
+  upArrow () {
+    this.setState({ start: this.state.start - 1, end: this.state.end - 1 })
   }
 
   addToCartClick () {
