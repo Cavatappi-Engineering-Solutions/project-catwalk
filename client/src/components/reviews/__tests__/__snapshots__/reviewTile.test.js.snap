@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="review-tile"
+>
+  <div
+    className="tile-header"
+  >
+    <div
+      className="star-rating"
+      style={
+        Object {
+          "--rating": "100%",
+        }
+      }
+    >
+      ★★★★★
+    </div>
+    <span
+      className="tile-date"
+    >
+      undefined, undefined
+    </span>
+  </div>
+  <p
+    className="tile-summary"
+  >
+    summary
+  </p>
+  <p
+    className="tile-body"
+  >
+    body
+  </p>
+  <p
+    className="tile-recommend"
+  />
+  <p
+    className="tile-response"
+  >
+    response
+  </p>
+  <div
+    className="tile-helpful-report"
+  >
+    <span
+      className="tile-helpful"
+    >
+      Helpful?
+    </span>
+    <span
+      className="tile-yes"
+      id="yes-1234"
+      onClick={[Function]}
+    >
+      Yes
+    </span>
+    <span
+      className="tile-helpfulness"
+    >
+      (
+      4
+      )
+    </span>
+    <span
+      className="tile-report"
+    >
+      Report
+    </span>
+  </div>
+</div>
+`;

@@ -29,4 +29,4 @@ const markReviewHelpful = (review_id) => {
   }
 }
 
-export { getProductReviews, markReviewHelpful, changeSort }
+export { getProductReviews, markReviewHelpful, incrementHelpful, changeSort }
