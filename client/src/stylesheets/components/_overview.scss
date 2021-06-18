@@ -75,7 +75,7 @@ $displayFlex: flex;
 
 .carousel_product_thumbnail_url {
   display: $displayFlex;
-  width: 80px;
+  width: 100px;
   height: 100%;
   margin-left: 100px;
   border: 2px solid;
@@ -121,8 +121,8 @@ $displayFlex: flex;
 }
 
 .default_product_thumbnail_url {
-  width: 60px;
-  height: 100%;
+  width: 80px;
+  height: 80px;
   margin-top: 20px;
   margin-left: 100px;
   border: 2px solid;
