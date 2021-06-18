@@ -97,3 +97,30 @@
   font-size: 14.5px;
   font-weight: bold;
 }
+
+.moreAnswers {
+  padding: 12px 28px;
+  border: 1px solid black;
+  cursor: pointer;
+  margin-right: 5px;
+  transition-duration: 0.4s;
+  background-color: white;
+  font-size: 14px;
+}
+
+.moreAnswers:hover {
+  background-color: #e7e7e7;
+}
+
+.addQuestions {
+  padding: 12px 28px;
+  border: 1px solid black;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  background-color: white;
+  font-size: 14px;
+}
+
+.addQuestions:hover {
+  background-color: #e7e7e7;
+}
