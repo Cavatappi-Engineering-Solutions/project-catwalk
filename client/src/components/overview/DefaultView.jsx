@@ -19,7 +19,9 @@ const DefaultView = ({ currentStylePhotos, changeView, changeMainPhoto, previous
       : <section className='default_view'>
           <div className='default_view_photos'>
             <div className='expand_view_button_wrap'>
-              <button onClick={() => { changeView() }} className='expand_view_button' aria-label="strink"><img src={Enlarge} className='expand_enlarge_button' alt='Default Enlarge Icon'/></button>
+              <button onClick={() => { changeView() }} className='expand_view_button' aria-label="strink">
+                <img src={Enlarge} className='expand_enlarge_button' alt='Default Enlarge Icon'/>
+              </button>
             </div>
             <div className='left_right_arrow_wrap'>
               <FaArrowAltCircleLeft className='left_arrow' onClick={() => { previousStyle() }}/>
