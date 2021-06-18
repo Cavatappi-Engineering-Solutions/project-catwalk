@@ -3,11 +3,6 @@ const getProductRatings = (productRatings) => ({
   payload: productRatings
 })
 
-const updateProductRatings = (productRatings) => ({
-  type: 'UPDATE_RATINGS',
-  payload: productRatings
-})
-
 const getProductRecommended = (productRecommended) => ({
   type: 'GET_RECOMMEND',
   payload: productRecommended
@@ -18,4 +13,4 @@ const getProductCharacteristics = (productCharacteristics) => ({
   payload: productCharacteristics
 })
 
-export { getProductRatings, updateProductRatings, getProductRecommended, getProductCharacteristics }
+export { getProductRatings, getProductRecommended, getProductCharacteristics }
