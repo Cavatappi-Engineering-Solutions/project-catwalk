@@ -12,13 +12,15 @@
   border: 1px solid black;
   margin-top: 2%;
   cursor: pointer;
+  width: 65%;
 }
 
 .questionsAndAnswers {
   @include displayCol;
-  width: 80%;
+  width: 90%;
   margin-top: 50px;
   margin-bottom: 50px;
+  margin-left: 400px;
 }
 
 .question {
