@@ -104,6 +104,16 @@ $displayFlex: flex;
   transform: scale(1.10);
 }
 
+.img-magnifier-glass {
+  position: absolute;
+  border: 3px solid #000;
+  border-radius: 50%;
+  cursor: none;
+  /*Set the size of the magnifier glass:*/
+  width: 100px;
+  height: 100px;
+}
+
 .default_product_thumbnail_url_photos {
   @include displayCol;
   position: absolute;
@@ -194,6 +204,10 @@ $displayFlex: flex;
   margin: 20px;
   text-decoration: underline;
   cursor: pointer;
+}
+
+.read_all_reviews:hover {
+  color:red;
 }
 
 .product_category {
