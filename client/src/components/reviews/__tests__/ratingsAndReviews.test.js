@@ -10,5 +10,4 @@ it('renders the component with initial state', () => {
   getByText('There are no reviews that match')
   getByText('-')
   getByText('★★★★★')
-  getByText('% of reviews recommend this product', { exact: false })
 })
