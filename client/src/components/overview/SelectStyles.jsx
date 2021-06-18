@@ -1,7 +1,8 @@
 import React from 'react'
 import circleCheck from '../../assets/icons/circleCheck.png'
+import Unavailable from '../../assets/icons/unavailable.png'
 
-const ProductStyles = ({ productStyles, changeSelectedStyle, currentStyle, changeCheckMark, checkMark, currentSelectedStyle }) => (
+const ProductStyles = ({ productStyles, changeSelectedStyle, currentStyle, changeCheckMark, currentSelectedStyle }) => (
   !currentStyle
     ? <section className='product_styles'>PLEASE WAIT</section>
     : <section className='product_styles'>
@@ -16,12 +17,17 @@ const ProductStyles = ({ productStyles, changeSelectedStyle, currentStyle, chang
         <section className='styles_container'>
           {productStyles.results.map((style, index) => (
               <div key={index} className='styles_checkMark'>
-                <img
-                src={style.photos[0].thumbnail_url}
-                className='select_styles'
-                alt='Selected Styles Available'
-                onClick={() => { changeSelectedStyle(index); changeCheckMark() }}
-                />
+                {style.photos[0].thumbnail_url !== null
+                  ? <img
+                    src={style.photos[0].thumbnail_url}
+                    className='select_styles'
+                    alt='Selected Styles Available'
+                    onClick={() => { changeSelectedStyle(index); changeCheckMark() }}
+                    />
+                  : <img
+                    src={ Unavailable }
+                    className='select_styles'
+                    alt='Selected Styles Available'/>}
                 {currentSelectedStyle === index
                   ? <img src={ circleCheck } className='checkmark_select_styles' alt='CheckMark Logo'/>
                   : <span className='checkmark_select_styles'></span>}
