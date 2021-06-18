@@ -34,7 +34,7 @@ const RatingsAndReviews = ({ product_id, sort, getProductReviews, getProductRati
 
   return (
     <section id="ratings-reviews">
-      <h2>Ratings &amp; Reviews</h2>
+      <h3 id="ratings-reviews-title">Ratings &amp; Reviews</h3>
       <div className="container-row">
         <Ratings />
         <Reviews />
