@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { API_KEY } from '../../../../config.js'
 
 const getProductReviews = (productReviews) => ({
   type: 'GET_REVIEWS',
@@ -20,12 +19,13 @@ const markReviewHelpful = (review_id) => {
   return (dispatch) => {
     const helpfulConfig = {
       method: 'PUT',
-      url: `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews/${review_id}/helpful`,
-      headers: { Authorization: API_KEY }
+      url: `api/fec2/hrnyc/reviews/${review_id}/helpful`
     }
     axios(helpfulConfig)
       .then(() => dispatch(incrementHelpful(review_id)))
-      .catch((err) => console.log('There was an error marking this review as helpful: ', err))
+      .catch((err) =>
+        console.log('There was an error marking this review as helpful: ', err)
+      )
   }
 }
 
