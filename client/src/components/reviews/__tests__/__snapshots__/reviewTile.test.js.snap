@@ -20,7 +20,7 @@ exports[`renders correctly 1`] = `
     <span
       className="tile-date"
     >
-      undefined, undefined
+      undefined, 2021-06-19
     </span>
   </div>
   <p
