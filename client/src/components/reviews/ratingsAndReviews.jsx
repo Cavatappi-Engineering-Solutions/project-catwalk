@@ -1,35 +1,42 @@
 import React from 'react'
 import axios from 'axios'
-import { API_KEY } from '../../../../config.js'
 import Ratings from './ratings.jsx'
 import Reviews from './reviews.jsx'
 
-const RatingsAndReviews = ({ product_id, sort, getProductReviews, getProductRatings, getProductRecommended, getProductCharacteristics }) => {
+const RatingsAndReviews = ({
+  product_id,
+  sort,
+  getProductReviews,
+  getProductRatings,
+  getProductRecommended,
+  getProductCharacteristics
+}) => {
   product_id = product_id || 0
   const reviewConfig = {
     method: 'GET',
-    url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews/',
-    headers: { Authorization: API_KEY },
+    url: 'api/fec2/hrnyc/reviews/',
     params: { product_id, sort }
   }
   const ratingConfig = {
     method: 'GET',
-    url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews/meta/',
-    headers: { Authorization: API_KEY },
+    url: 'api/fec2/hrnyc/reviews/meta/',
     params: { product_id }
   }
-  axios.all([axios(reviewConfig), axios(ratingConfig)])
-    .then(axios.spread((...res) => {
-      const reviews = res[0].data.results
-      const ratings = res[1].data.ratings
-      const recommends = res[1].data.recommended
-      const characters = res[1].data.characteristics
+  axios
+    .all([axios(reviewConfig), axios(ratingConfig)])
+    .then(
+      axios.spread((...res) => {
+        const reviews = res[0].data.results
+        const ratings = res[1].data.ratings
+        const recommends = res[1].data.recommended
+        const characters = res[1].data.characteristics
 
-      getProductReviews(reviews)
-      getProductRatings(ratings)
-      getProductRecommended(recommends)
-      getProductCharacteristics(characters)
-    }))
+        getProductReviews(reviews)
+        getProductRatings(ratings)
+        getProductRecommended(recommends)
+        getProductCharacteristics(characters)
+      })
+    )
     .catch((err) => console.log(err))
 
   return (
