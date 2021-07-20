@@ -1,10 +1,7 @@
 # Cavatappi Catwalk
 
----
-
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
 - [Description](#description)
 - [Getting Started](#getting-started)
 - [Installation](#installation)
@@ -14,15 +11,15 @@
   - [Ratings And Reviews](#ratings-and-reviews)
   - [Questions And Answers](#questions-and-answers)
 
-## Description
-
 ---
+
+## Description
 
 Delivering a fully functional web application that meets the specifications and requirements outlined by project stakeholders.
 
-## Getting Started
-
 ---
+
+## Getting Started
 
 - Clone the repo
   ```
@@ -33,9 +30,9 @@ Delivering a fully functional web application that meets the specifications and 
   const API_KEY = 'ENTER YOUR API'
   ```
 
-## Installation
-
 ---
+
+## Installation
 
 - Install NPM packages
   ```
@@ -54,19 +51,15 @@ Delivering a fully functional web application that meets the specifications and 
   npm run sass
   ```
 
-## Usage
-
 ---
+
+## Usage
 
 ### Overview
 
 - [Overview Widget](client/src/assets/icons/overview/project_catwalk.gif)
 
----
-
 ### Ratings And Reviews
-
----
 
 ### Questions And Answers
 
@@ -75,5 +68,5 @@ Delivering a fully functional web application that meets the specifications and 
 ## Authors
 
 - [Andrew Huang](https://github.com/AndrewHuang123)
-- Timothy Parrish
+- [Timothy Parrish](https://github.com/timapar)
 - MarcAnthony Petrecca
