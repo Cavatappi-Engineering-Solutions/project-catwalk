@@ -6,16 +6,16 @@
 - [Getting Started](#getting-started)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Authors](#authors)
   - [Overview](#overview)
   - [Ratings And Reviews](#ratings-and-reviews)
   - [Questions And Answers](#questions-and-answers)
+- [Authors](#authors)
 
 ---
 
 ## Description
 
-Delivering a fully functional web application that meets the specifications and requirements outlined by project stakeholders.
+Delivering a fully functional front end that meets the specifications and requirements outlined by the project outline. Must interact with already established API and manipulate and shape data as necessary to achieve the desired look.
 
 ---
 
@@ -57,9 +57,16 @@ Delivering a fully functional web application that meets the specifications and 
 
 ### Overview
 
-- [Overview Widget](client/src/assets/icons/overview/project_catwalk.gif)
+![Overview Widget](client/src/assets/overview/project_catwalk.gif)
 
 ### Ratings And Reviews
+
+![Reviews Widget](client/src/assets/reviews/reviewsSnapshot.png)
+
+- Displays the metadata breakdown for the product based on all reviews recorded to date
+- Breaks down average reviewer opinions on designated characteristics
+- Displays review window with individual review cards sorted by predefined choices
+- Allows users to mark individual reviews as helpful or report if inappropriate
 
 ### Questions And Answers
 
