@@ -76,4 +76,4 @@ Delivering a fully functional front end that meets the specifications and requir
 
 - [Andrew Huang](https://github.com/AndrewHuang123)
 - [Timothy Parrish](https://github.com/timapar)
-- MarcAnthony Petrecca
+- [MarcAnthony Petrecca](https://github.com/marcpetrecca1)
