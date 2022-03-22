@@ -70,6 +70,9 @@ Delivering a fully functional front end that meets the specifications and requir
 
 ### Questions And Answers
 
+- Gives users the ability to view and search questions, ask questions, answer questions, and provide feedback on questions about the current product
+- Allows users to mark questions and answers helpful or report if inappropriate
+
 ---
 
 ## Authors
